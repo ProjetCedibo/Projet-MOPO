@@ -6,7 +6,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		Transjurassienne Tj = new Transjurassienne();
-	
+		System.out.println("Coucou Monde");
 	
 	
 	}

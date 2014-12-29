@@ -22,7 +22,7 @@ public class Transjurassienne {
 	             for (int i=0;i<items.length;i++){
 	            	System.out.print(items[i]+" ");
 	            	 
-	             } this.Skieurs.add(new Participants(items[2], items[3],items[4], items[5]));
+	             } //this.Skieurs.add(new Participants(items[2], items[3],items[4], items[5]));
 	            System.out.println();
 	            }
 	        lecteurAvecBuffer.close();

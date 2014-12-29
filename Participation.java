@@ -11,7 +11,7 @@ public class Participation {
 		int heure=0;
 		int minute=0;
 		int seconde=0;
-		int dixième=0;
+		int dixieme=0;
 	};
 
 	Epreuve Ep = new Epreuve();

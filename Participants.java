@@ -3,15 +3,15 @@ import java.util.TreeSet;
 
 public class Participants {
 
-	private String nom;
-	private int naissance;
-	private String club;
-	private String nation;
+	protected String nom;
+	protected int naissance;
+	protected String club;
+	protected String nation;
 	TreeSet <Participation> Participe;
 	
-	Participants(String nom, String naissance, String club, String nation) {
+	Participants(String nom, int naissance, String club, String nation) {
 		this.nom = nom;
-		this.naissance = Integer.parseInt(naissance);
+		this.naissance = naissance;
 		this.club = club;
 		this.nation = nation;
 		Participe = new TreeSet <Participation>();
