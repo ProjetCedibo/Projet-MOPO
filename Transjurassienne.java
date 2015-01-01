@@ -45,8 +45,18 @@ public class Transjurassienne {
 	    	  
 	    	  String[] items=ligne.split(";");
 	          
-	    	  for (int i=0;i<items.length;i++) /*System.out.print(items[i]+" ")*/;
-	          /*System.out.println()*/;}
+	    	  Participants tmp = new Participants(items);
+	    	  
+	    	  if (Skieurs.contains(tmp)){
+	        	  System.out.println("Existe déjà");
+	          }
+	    	  else {
+	    		  System.out.println("N'existe pas");
+	    	  }
+	        	  
+	        	  
+	    	//  for (int i=0;i<items.length;i++) /*System.out.print(items[i]+" ")*/;
+	          /*System.out.println();*/}
 	      
 	      	  lecteurAvecBuffer.close();
 	    }
