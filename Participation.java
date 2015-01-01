@@ -2,53 +2,68 @@
 public class Participation {
 
 	
-	private int Dossard;
-	private int Classement;
-	private String Categorie;
+	private int dossard;
+	private int classement;
+	private String categorie;
+	private String arrivee;
+	private String classement_cat;
 	
+	Epreuve ep = new Epreuve();
 	
-	static class Arrivee {
-		int heure=0;
-		int minute=0;
-		int seconde=0;
-		int dixieme=0;
-	};
-
-	Epreuve Ep = new Epreuve();
-	
-	
-Arrivee A = new Arrivee();
-
-
+	Participation (String infos []) {
+		this.dossard = Integer.parseInt(infos[0]);
+		this.classement = Integer.parseInt(infos[1]);
+		this.arrivee = infos[6];
+		this.categorie = infos[8];
+		this.classement_cat=infos[9];	
+	}
 
 
 public int getDossard() {
-	return Dossard;
+	return dossard;
 }
 
 
 public void setDossard(int dossard) {
-	Dossard = dossard;
+	this.dossard = dossard;
 }
 
 
 public int getClassement() {
-	return Classement;
+	return classement;
 }
 
 
 public void setClassement(int classement) {
-	Classement = classement;
+	this.classement = classement;
 }
 
 
 public String getCategorie() {
-	return Categorie;
+	return categorie;
 }
 
 
 public void setCategorie(String categorie) {
-	Categorie = categorie;
+	this.categorie = categorie;
+}
+
+
+public String getArrivee() {
+	return this.arrivee;
+}
+
+
+public void setArrivee(String arrivee) {
+	this.arrivee = arrivee;
+}
+
+public String getClassement_cat() {
+	return classement_cat;
+}
+
+public void setClassement_cat(String classement_cat) {
+	this.classement_cat = classement_cat;
 }	
 	
 }
