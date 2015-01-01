@@ -1,9 +1,7 @@
-import java.awt.List;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.Hashtable;
 import java.util.TreeSet;
 
 
@@ -20,7 +18,7 @@ public class Transjurassienne {
 		    listefichiers=repertoire.list();
 		   
 
-		    System.out.print("\nChargement des donees...\n");
+		    System.out.print("\nChargement des données...\n");
 
 		    for(int i=0;i<listefichiers.length;i++)
 		    {
@@ -28,10 +26,42 @@ public class Transjurassienne {
 		      {
 		        System.out.print("\nEnregistrement des fichiers csv en cours : " + listefichiers[i]);
 		        Annee.add(new Annee(listefichiers[i].substring(0,4)));
+		        lectureFichier(listefichiers[i]);
 		      }    
 		    }
 		  }
 		  
+	public void lectureFichier(String nomFichier){
+		
+		
+		try
+	    {  
+	      String ligne;
+	      BufferedReader lecteurAvecBuffer = new BufferedReader(new FileReader(nomFichier));
+	      ligne = lecteurAvecBuffer.readLine();
+	      
+	      
+	      while ((ligne = lecteurAvecBuffer.readLine()) != null){
+	    	  
+	    	  String[] items=ligne.split(";");
+	          
+	    	  for (int i=0;i<items.length;i++) /*System.out.print(items[i]+" ")*/;
+	          /*System.out.println()*/;}
+	      
+	      	  lecteurAvecBuffer.close();
+	    }
+	    
+		catch(Exception e){
+	        
+			System.out.println("Erreur fichier : "+e.getMessage()+" "+e.getLocalizedMessage());
+	    }
+
+	}
+	
+	
+	
+	
+	
 	
 	
 	public TreeSet<Participants> getSkieurs() {
