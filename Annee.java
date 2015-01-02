@@ -12,7 +12,6 @@ public class Annee {
 Annee(String annee) {
 	this.annee = Integer.parseInt(annee);
 	ArrayList<Epreuve> epreuve = new ArrayList<Epreuve>();
-	//lectureFichier();
 }
 
 
