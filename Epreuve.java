@@ -31,6 +31,8 @@ public class Epreuve {
 		this.nomCourse = nomCourse;
 	}
 	
-	
+	public int nombreParticipant(){
+		return Coureurs.size();
+	}
 	
 }

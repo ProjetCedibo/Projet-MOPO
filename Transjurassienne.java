@@ -46,6 +46,10 @@ public class Transjurassienne {
 	    	  String[] items=ligne.split(";");
 	          
 	    	 
+	    	  /*
+	    	   * C'est la qu'il faut tester si l'epreuve est connu ou non 
+	    	   * je pense il faut passé l'Annee en param du coup XD
+	    	   */
 	    	  
 	          Participants tmp = new Participants(items);
 	          System.out.println(tmp);

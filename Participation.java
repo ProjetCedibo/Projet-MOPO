@@ -8,7 +8,6 @@ public class Participation {
 	private String arrivee;
 	private String classement_cat;
 	
-	Epreuve ep = new Epreuve();
 	
 	Participation (String infos []) {
 		this.dossard = Integer.parseInt(infos[0]);
