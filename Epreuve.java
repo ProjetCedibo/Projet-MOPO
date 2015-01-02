@@ -1,13 +1,15 @@
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.TreeSet;
 
 
 public class Epreuve implements Comparable<Epreuve> {
-	TreeSet <Participants> Coureurs;
+	ArrayList <Participants> Coureurs;
 	private int distance;
 	private String nomCourse;
 	
 	Epreuve(String nom, int distance){
+		Coureurs = new ArrayList<Participants>();
 		this.nomCourse = nom;
 		this.distance = distance;
 	}
@@ -59,24 +61,25 @@ public class Epreuve implements Comparable<Epreuve> {
 			return 1;
 		}
 		else {
-			return 0;
+			return 1;
 		}
-
 	}
+	
 	public String toString() {
 		String str = "";	
 		str = getNomCourse() + "\n";
 		
-		Iterator iterator;
-	    iterator = Coureurs.iterator();
+		Iterator<Participants> it;
+	    it = Coureurs.iterator();
 	    
-	    while (iterator.hasNext()){
-	    	Participation tmp = (Participation) iterator.next();
+	    while (it.hasNext()){
+	    	Participants tmp = it.next();
 	    	tmp.toString();
 	    }
 		return str;
 	}	
 	
 	
+
 	
 }

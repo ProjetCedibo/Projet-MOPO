@@ -52,16 +52,18 @@ public class Transjurassienne {
 	    	   */
 	    	  
 	    	  
-	          Participants tmp = new Participants(items);
-	         // System.out.println(tmp);
+	          Participants tmp = new Participants(items, 1);
+	          System.out.println(tmp);
 	          
 	    	 
 	          if (!an.contient(items[7])) {
+	        	  System.out.println(an.contient(items[7]));
 	        	  an.addEpreuve(items);
 	        	  System.out.println("L'épreuve n'existait pas et est ajoutée");
 	        	  an.addParticipation(items);  
 	        	  System.out.println("On ajoute le participant");
-	          	}
+	          	 
+	          }
 	          else {
 	        	  an.addParticipation(items);
 	        	  System.out.println("\n L'épreuve existait déjà");

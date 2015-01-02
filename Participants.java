@@ -15,6 +15,14 @@ public class Participants implements Comparable<Participants>{
 	    this.naissance=Integer.parseInt(infos[3]);
 	    this.club=infos[4];
 	    this.nation=infos[5];
+		}
+	
+	Participants(String infos [], int i) {
+		Participe = new ArrayList<Participation>();	
+		this.nom=infos[2];
+	    this.naissance=Integer.parseInt(infos[3]);
+	    this.club=infos[4];
+	    this.nation=infos[5];
 	    addParticipation(infos);
 	}
 	
@@ -72,10 +80,6 @@ public class Participants implements Comparable<Participants>{
 		}
 			
 		return str;
-	}
-		
-		
-		
-		
+	}	
 }
 

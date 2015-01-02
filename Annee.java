@@ -24,6 +24,8 @@ public void setAnnee(int annee) {
 
 public boolean contient(String items) {
 	Epreuve tmp = new Epreuve(items,Integer.parseInt(items.substring(0,2)));
+	System.out.println("Je suis : "+tmp);
+	System.out.println(epreuve.contains(tmp));
 	return epreuve.contains(tmp);
 }
 
