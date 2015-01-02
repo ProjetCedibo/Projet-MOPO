@@ -23,7 +23,6 @@ public class Participants implements Comparable<Participants>{
 		
 	}
 	
-	
 	public String getNom() {
 		return nom;
 	}
@@ -71,9 +70,7 @@ public class Participants implements Comparable<Participants>{
 		for (Participation par : Participe) {
 			str = str + " " + par.toString();	
 		}
-		
-		
-		
+			
 		return str;
 	}
 		

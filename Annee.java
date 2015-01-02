@@ -27,7 +27,7 @@ public boolean contient(String string) {
 }
 
 public void addEpreuve(String[] items) {
-	epreuve.add(new Epreuve(items[7],Integer.parseInt(items[7])));
+	epreuve.add(new Epreuve(items[7],Integer.parseInt(items[7].substring(0,2))));
 }
 
 public void addParticipation(String[] items) {
@@ -41,7 +41,7 @@ public void addParticipation(String[] items) {
 public String toString() {
 	String str = "";	
 	str = "\n" + getAnnee() + "\n";
-	System.out.println("Biscotte");
+	System.out.println("\nBiscotte");
 	for (Epreuve ep : epreuve) {
 		str = str + " " + ep.toString();
 		

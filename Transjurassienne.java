@@ -25,7 +25,7 @@ public class Transjurassienne {
 		    {
 		      if(listefichiers[i].endsWith(".csv")==true)
 		      {
-		        System.out.print("\nEnregistrement des fichiers csv en cours : " + listefichiers[i]);
+		        System.out.print("\nEnregistrement des fichiers csv en cours : \n" + listefichiers[i] + "\n");
 		        Annee an = new Annee(listefichiers[i].substring(0,4));
 		        Annee.add(an);
 		        lectureFichier(listefichiers[i], an);
@@ -56,12 +56,15 @@ public class Transjurassienne {
 	         // System.out.println(tmp);
 	          
 	    	 
-	          if (an.contient(items[7])) {
+	          if (!an.contient(items[7])) {
 	        	  an.addEpreuve(items);
+	        	  System.out.println("L'épreuve n'existait pas et est ajoutée");
 	        	  an.addParticipation(items);  
-	        	  }
+	        	  System.out.println("On ajoute le participant");
+	          	}
 	          else {
 	        	  an.addParticipation(items);
+	        	  System.out.println("\n L'épreuve existait déjà");
 	          }
 	          
 	          if (Skieurs.contains(tmp)){
