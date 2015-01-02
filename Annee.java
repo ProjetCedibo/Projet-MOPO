@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 
 /**
- * Class permettant de stocker les epreuves qui on eu lieu durant l'année
+ * Classe permettant de stocker les épreuves qui ont eu lieu durant l'année
  * 
  * @author Ibrahim Akrach
  * @author Cedric Petetin
@@ -16,8 +16,8 @@ public class Annee {
 	private ArrayList <Epreuve> epreuve;
 
 /**
- * Constucteur
- * @param annee l'année des epreuves a enregistrer
+ * Constructeur
+ * @param annee l'année des épreuves à enregistrer
  */
 Annee(String annee) {
 	this.setAnnee(Integer.parseInt(annee));
@@ -35,9 +35,9 @@ Annee(String annee) {
 
 
 /**
- * Fonction permettant de rechercher les informations sur une epreuve
- * @param str le nom de l'epreuve que l'on cherche
- * @return l'epreuve qui correspond a la recherche
+ * Fonction permettant de rechercher les informations sur une épreuve
+ * @param str le nom de l'épreuve que l'on cherche
+ * @return l'épreuve qui correspond à la recherche
  */
 public Epreuve getEpreuve(String str) {
 	for (int i =0;i<epreuve.size();i++) {
@@ -52,8 +52,8 @@ public Epreuve getEpreuve(String str) {
 
 
 /**
- * Getter sur l'annee
- * @return l'annee 
+ * Getter sur l'année
+ * @return l'année 
  */
 public int getAnnee() {
 	return annee;
@@ -61,7 +61,7 @@ public int getAnnee() {
 
 
 /**
- * Setter sur l'annee
+ * Setter sur l'année
  * @param annee
  */
 public void setAnnee(int annee) {
@@ -70,7 +70,7 @@ public void setAnnee(int annee) {
 
 
 /**
- * Fonction permettant d'ajouter un participant a une epreuve
+ * Fonction permettant d'ajouter un participant à une épreuve
  * @param items
  */
 public void addParticipation(String[] items) {
