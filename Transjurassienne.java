@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.SortedSet;
 import java.util.TreeSet;
 
 
@@ -99,10 +100,18 @@ public class Transjurassienne {
 	public void setAnnee(ArrayList<Annee> annee) {
 		Annee = annee;
 	}
+
+	 public int compare(Participants p1, Participants p2) {
+	    return p1.getNom().compareToIgnoreCase( p2.getNom());
+	 }
+	
+	
+	
+	
 	
 	public ArrayList<Participants> Recherche(String str){
-		
-		
+		SortedSet<Participants> s = Skieurs.subSet(str, str+Character.MAX_VALUE);
+		return s;
 		
 		return null;
 		
