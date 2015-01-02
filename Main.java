@@ -9,9 +9,10 @@ public class Main {
 		System.out.println("\nXoxo ! :) ");
 		//System.out.println(tj.getAnnee(2011).getEpreuve("76FTM"));
 		//System.out.println(tj.getAnnee(2011).getEpreuve("76FTF"));
-		System.out.println(tj.getAnnee(2011).getEpreuve("76FTM").DureeMoyenne());
-		System.out.println("resultat de la recherche");
-		tj.getParticipant("Bourgeois");
+		System.out.println(tj.getAnnee(2011).getEpreuve("76FTF").DureeMoyenne());
+		System.out.println(tj.getAnnee(2011).getEpreuve("76FTF").nombreParticipant());
+		//System.out.println("resultat de la recherche");
+		//tj.getParticipant("Bourgeois");
 		//fenetre fen = new fenetre();
 		
 	}
