@@ -52,7 +52,7 @@ public class Transjurassienne {
 	    	   */
 	    	  
 	    	  
-	          Participants tmp = new Participants(items, 1);
+	          Participants tmp = new Participants(items, an.getAnnee());
 	          //System.out.println(tmp);
 	          
 	       
@@ -65,7 +65,7 @@ public class Transjurassienne {
 	          
 	          
 	          if (Skieurs.contains(tmp)){
-	        	  tmp.addParticipation(items);
+	        	  tmp.addParticipation(items,an.getAnnee());
 	          }
 	    	  else {
 	    		  Skieurs.add(tmp);
@@ -101,20 +101,17 @@ public class Transjurassienne {
 		Annee = annee;
 	}
 
-	 public int compare(Participants p1, Participants p2) {
-	    return p1.getNom().compareToIgnoreCase( p2.getNom());
-	 }
 	
-	 public void getName(String s){
+	 public void getParticipant(String s){
 	        for(Participants p : Skieurs) 
 	        {
 	            if(s.toLowerCase().startsWith(s.toLowerCase()))
 	                System.out.println(p);
 	        }
 	    }
-	
 
 	
+
 	
 
 }

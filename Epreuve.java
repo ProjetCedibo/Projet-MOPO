@@ -40,12 +40,10 @@ public class Epreuve {
 	
 	public String DureeMoyenne(){
 		double moyenne = 0.0;
-		Iterator iterator;
-	    iterator = Coureurs.iterator();
 	    
-	    while (iterator.hasNext()){
-	    	Participation tmp = (Participation) iterator.next();
-			moyenne = moyenne + (double)(tmp.getArrivee());
+	    for(int i = 0; i<Coureurs.size();i++){
+	    	Participants tmp = Coureurs.get(i);
+			moyenne = moyenne + (double)(tmp.getArrivee(nomCourse));
 		}
 	    moyenne = moyenne / (double)(Coureurs.size());
 	    String heures   = String.valueOf((int)(moyenne/3600));

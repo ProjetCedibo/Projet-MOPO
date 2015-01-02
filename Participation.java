@@ -7,14 +7,18 @@ public class Participation {
 	private String categorie;
 	private String arrivee;
 	private String classement_cat;
+	private String epreuve;
+	private int annee;
 	private Participants p;
 	
-	Participation (String infos []) {
+	Participation (String infos [],int an) {
 		this.dossard = Integer.parseInt(infos[0]);
 		this.classement = Integer.parseInt(infos[1]);
 		this.arrivee = infos[6];
 		this.categorie = infos[8];
 		this.classement_cat=infos[9];	
+		this.epreuve = infos[7];
+		this.annee = an;
 		p = new Participants(infos);
 	}
 
@@ -79,6 +83,11 @@ public Participants getP() {
 
 public void setP(Participants p) {
 	this.p = p;
+}
+
+
+public String getEpreuve() {
+	return epreuve;
 } 
 
 

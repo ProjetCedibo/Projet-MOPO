@@ -19,17 +19,17 @@ public class Participants implements Comparable<Participants>{
 	}
 
 	
-	Participants(String infos [], int i) {
+	Participants(String infos [], int an) {
 		Participe = new ArrayList<Participation>();	
 		this.nom=infos[2];
 	    this.naissance=Integer.parseInt(infos[3]);
 	    this.club=infos[4];
 	    this.nation=infos[5];
-	    addParticipation(infos);
+	    addParticipation(infos,an);
 	}
 	
-	public void addParticipation(String infos []) {
-		Participe.add(new Participation(infos));
+	public void addParticipation(String infos [], int an) {
+		Participe.add(new Participation(infos, an));
 		
 	}
 	
@@ -82,6 +82,16 @@ public class Participants implements Comparable<Participants>{
 		}
 			
 		return str;
+	}
+
+
+	public double getArrivee(String nomEpreuve) {
+		for(int i =0; i<Participe.size();i++){
+			if(nomEpreuve.equalsIgnoreCase(Participe.get(i).getEpreuve())){
+				return Participe.get(i).getArrivee();
+			}
+		}
+		return 0;
 	}	
 }
 
