@@ -2,7 +2,7 @@ import java.util.Iterator;
 import java.util.TreeSet;
 
 
-public class Epreuve {
+public class Epreuve implements Comparable<Epreuve> {
 	TreeSet <Participants> Coureurs;
 	private int distance;
 	private String nomCourse;
@@ -12,8 +12,8 @@ public class Epreuve {
 		this.distance = distance;
 	}
 	
-	public void AddParticipant(){
-		
+	public void addParticipants(String items []){
+		Coureurs.add(new Participants(items));
 	}
 	
 	public int getDistance() {
@@ -52,6 +52,16 @@ public class Epreuve {
 
 	    return heures + "h " + minutes + "min " + secondes + "s";
 		
+	}
+
+	public int compareTo(Epreuve ep) {
+		if (this.nomCourse.equalsIgnoreCase(ep.getNomCourse())) {
+			return 1;
+		}
+		else {
+			return 0;
+		}
+
 	}
 	
 }

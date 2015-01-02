@@ -7,7 +7,7 @@ public class Main {
 	public static void main(String[] args) {
 		Transjurassienne tj = new Transjurassienne();
 		System.out.println("\n Xoxo ! :) ");
-		fenetre fen = new fenetre();
+		//fenetre fen = new fenetre();
 	
 	}
 }		

@@ -4,7 +4,7 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.TreeSet;
 
-//Petetach
+
 
 public class Transjurassienne {
 	
@@ -52,13 +52,18 @@ public class Transjurassienne {
 	    	   * C'est la qu'il faut tester si l'epreuve est connu ou non 
 	    	   * je pense il faut passé l'Annee en param du coup XD
 	    	   */
-	    	  if 
+	    	  
 	    	  
 	          Participants tmp = new Participants(items);
 	          System.out.println(tmp);
 	    	 
-	          
-	          
+	          if (an.contient(items[7])) {
+	        	  an.addEpreuve(items);
+	        	  an.addParticipation(items);  
+	        	  }
+	          else {
+	        	  an.addParticipation(items);
+	          }
 	          
 	          
 	     

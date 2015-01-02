@@ -5,36 +5,44 @@ import java.util.ArrayList;
 
 
 
-public class Annee implements Comparable<Epreuve> {
+public class Annee {
 	private int annee;
-	List epreuve;
+	private ArrayList<Epreuve> epreuve;
 
 Annee(String annee) {
 	this.setAnnee(Integer.parseInt(annee));
-	ArrayList<Epreuve> epreuve = new ArrayList<Epreuve>();
+	epreuve = new ArrayList<Epreuve>();
 }
-
-/*
- * Je voulais comparer le nom des epreuves
- */
-public int compareTo(Epreuve o) {
-
-	return 0;
-}
-
 
 public int getAnnee() {
 	return annee;
 }
 
-
 public void setAnnee(int annee) {
 	this.annee = annee;
 }
 
-
-
-
-
-
+public boolean contient(String string) {
+	return epreuve.contains(string);
 }
+
+public void addEpreuve(String[] items) {
+	epreuve.add(new Epreuve(items[7],Integer.parseInt(items[7])));
+}
+
+public void addParticipation(String[] items) {
+	for (int i=0; i<epreuve.size(); i++) {
+		if (epreuve.get(i).getNomCourse().equalsIgnoreCase(items[7])) {
+			epreuve.get(i).addParticipants(items);
+		}
+	}
+}
+	
+}
+
+
+
+
+
+
+
