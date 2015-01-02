@@ -3,8 +3,8 @@ import java.util.Iterator;
 import java.util.TreeSet;
 
 /**
- * Class permettant le stockage des information d'une epreuve
- * elle contient une list de participant, le nom de l'épreuve et la distance
+ * Classe permettant le stockage des informations d'une épreuve
+ * Elle contient une liste de participants, le nom de l'épreuve et la distance
  * 
  * @author Ibrahim Akrach
  * @author Cedric Petetin
@@ -17,8 +17,8 @@ public class Epreuve {
 	
 	/**
 	 * Constructeur
-	 * @param nomCourse C'est le nom de l'epreuve ex : 76FTM
-	 * @param distance  C'est la distande de l'epreuve ex : 76km
+	 * @param nomCourse C'est le nom de l'épreuve ex : 76FTM
+	 * @param distance  C'est la distance de l'épreuve ex : 76km
 	 */
 	Epreuve(String nomCourse, int distance){
 		Coureurs = new ArrayList<Participants>();
@@ -28,8 +28,8 @@ public class Epreuve {
 	
 
 	/**
-	 * Fonction permettant l'ajout d'un participant a l'epreuve
-	 * @param items C'est un tableau qui contient toutes les information pour ajouter une participation
+	 * Fonction permettant l'ajout d'un participant à l'epreuve
+	 * @param items C'est un tableau qui contient toutes les informations pour ajouter une participation
 	 */
 	public void addParticipants(String items []){
 		Coureurs.add(new Participants(items, 1));
@@ -47,7 +47,7 @@ public class Epreuve {
 	
 	/**
 	 * Getter du nom de la course
-	 * @return le nom de la cours 
+	 * @return le nom de la course 
 	 */
 	public String getNomCourse() {
 		return nomCourse;
@@ -55,15 +55,15 @@ public class Epreuve {
 	
 	
 	/**
-	 * Fonction permattant de connaitre le nombre de participant a l'epreuve
-	 * @return le nombre de participant
+	 * Fonction permettant de connaître le nombre de participants à l'épreuve
+	 * @return le nombre de participants
 	 */
 	public int nombreParticipant(){
 		return Coureurs.size();
 	}
 	
 	/**
-	 * Fonction permettant connettre la moyenne du temps mis pour finir l'epreuve
+	 * Fonction permettant de connaître la moyenne du temps mis pour finir l'épreuve
 	 * @return la moyenne du temps
 	 */
 	public String DureeMoyenne(){

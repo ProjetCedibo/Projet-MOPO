@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 /**
- * Class permettant de stocker les informations d'un participant a la transjurassienne
+ * Class permettant de stocker les informations d'un participant à la transjurassienne
  * 
  * @author Ibrahim Akrach
  * @author Cedric Petetin
@@ -44,8 +44,8 @@ public class Participants implements Comparable<Participants>{
 	}
 	
 	/**
-	 * Fonction permettant d'ajouter une participation a une epreuve a un participant
-	 * @param infos tableau contenant les informations nécéssaire a l'ajout d'une participation
+	 * Fonction permettant d'ajouter une participation à une épreuve à un participant
+	 * @param infos tableau contenant les informations nécessaire à l'ajout d'une participation
 	 * @param an
 	 */
 	public void addParticipation(String infos [], int an) {
@@ -110,9 +110,9 @@ public class Participants implements Comparable<Participants>{
 
 
 	/**
-	 * Fonction permettant de connaitre le temps mis par le participant pour finir une epreuve
-	 * @param nomEpreuve l'epreuve dont on veut connaitre le temps du participant
-	 * @return le temps mis par le participant pour finir une epreuve
+	 * Fonction permettant de connaître le temps mis par le participant pour finir une épreuve
+	 * @param nomEpreuve l'épreuve dont on veut connaître le temps du participant
+	 * @return le temps mis par le participant pour finir une épreuve
 	 */
 	public double getArrivee(String nomEpreuve) {
 		for(int i =0; i<Participe.size();i++){

@@ -19,7 +19,7 @@ public class Transjurassienne {
 	
 	/**
 	 * Constructeur
-	 * il recherche tout les fichiers .csv dans lesquels sont stocké les informations 
+	 * il recherche tous les fichiers .csv dans lesquels sont stockés les informations 
 	 */
 	Transjurassienne(){
 		Skieurs = new TreeSet<Participants>();
@@ -45,9 +45,9 @@ public class Transjurassienne {
 	
 		  
 	/**
-	 * Fonction permettant d'enregistrer le contenue d'un fichier 
+	 * Fonction permettant d'enregistrer le contenu d'un fichier 
 	 * @param nomFichier le nom du fichier
-	 * @param an objet contenant les informations sur l'annee
+	 * @param an objet contenant les informations sur l'année
 	 */
 	public void lectureFichier(String nomFichier, Annee an){
 		try
@@ -106,9 +106,9 @@ public class Transjurassienne {
 	
 	
 	/**
-	 * Getter sur une annee précise
-	 * @param i l'annee chercher
-	 * @return l'annee chercher
+	 * Getter sur une année précise
+	 * @param i l'année cherchée
+	 * @return l'année cherchée
 	 */
 	public Annee getAnnee(int i) {
 		for (int j =0;j<Annee.size();j++) {
@@ -124,8 +124,8 @@ public class Transjurassienne {
 
 
 	/**
-	 * Setter sur l'Annee
-	 * @param annee
+	 * Setter sur l'Année
+	 * @param année
 	 */
 	public void setAnnee(ArrayList<Annee> annee) {
 		Annee = annee;

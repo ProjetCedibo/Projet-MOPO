@@ -1,5 +1,5 @@
 /**
- * Class permettant de stocker les informations sur les participation des participants
+ * Classe permettant de stocker les informations sur les participations des participants
  * 
  * @author Ibrahim Akrach
  * @author Cedric Petetin
@@ -36,7 +36,7 @@ public class Participation {
 
 /**
  * Getter sur le dossard
- * @return le numero de dossard
+ * @return le numéro de dossard
  */
 public int getDossard() {
 	return dossard;
@@ -44,8 +44,8 @@ public int getDossard() {
 
 
 /**
- * Gette sur le classement
- * @return la position a classement
+ * Getter sur le classement
+ * @return la position au classement
  */
 public int getClassement() {
 	return classement;
@@ -62,7 +62,7 @@ public String getCategorie() {
 
 
 /**
- * Getter sur l'arrivee
+ * Getter sur l'arrivée
  * @return le temps
  */
 public int getArrivee() {
@@ -95,13 +95,11 @@ public Participants getP() {
 
 
 /**
- * Getter sur l'epreuve
- * @return le nom de l'epreuve
+ * Getter sur l'épreuve
+ * @return le nom de l'épreuve
  */
 public String getEpreuve() {
 	return epreuve;
 } 
-
-
 
 }
