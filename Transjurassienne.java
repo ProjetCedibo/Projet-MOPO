@@ -25,13 +25,14 @@ public class Transjurassienne {
 		      if(listefichiers[i].endsWith(".csv")==true)
 		      {
 		        System.out.print("\nEnregistrement des fichiers csv en cours : " + listefichiers[i]);
-		        Annee.add(new Annee(listefichiers[i].substring(0,4)));
-		        lectureFichier(listefichiers[i]);
+		        Annee an = new Annee(listefichiers[i].substring(0,4));
+		        Annee.add(an);
+		        lectureFichier(listefichiers[i], an);
 		      }    
 		    }
 		  }
 		  
-	public void lectureFichier(String nomFichier){
+	public void lectureFichier(String nomFichier, Annee an){
 		
 		
 		try
@@ -50,6 +51,7 @@ public class Transjurassienne {
 	    	   * C'est la qu'il faut tester si l'epreuve est connu ou non 
 	    	   * je pense il faut passé l'Annee en param du coup XD
 	    	   */
+	    	  if 
 	    	  
 	          Participants tmp = new Participants(items);
 	          System.out.println(tmp);

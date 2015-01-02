@@ -18,11 +18,6 @@ public class Participation {
 	}
 
 
-public Participation() {
-
-	}
-
-
 public int getDossard() {
 	return dossard;
 }

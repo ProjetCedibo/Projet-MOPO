@@ -15,7 +15,7 @@ Annee(String annee) {
 }
 
 /*
- * Je voulais comparer le nom des epreuve
+ * Je voulais comparer le nom des epreuves
  */
 public int compareTo(Epreuve o) {
 
