@@ -55,7 +55,7 @@ public class Transjurassienne {
 	          }
 	    	  else {
 	    		  Skieurs.add(tmp);
-	    		  System.out.println("Je suis passé dans add les amis :) ");
+	    		  //System.out.println("Je suis passé dans add les amis :) ");
 	    	  }
 	        	 tmp = null; 
 	        	  
