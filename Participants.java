@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 /**
- * Class permettant de stocker les informationd d'un participant a la transjurassienne
+ * Class permettant de stocker les informations d'un participant a la transjurassienne
  * 
  * @author Ibrahim Akrach
  * @author Cedric Petetin

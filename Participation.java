@@ -1,4 +1,10 @@
-
+/**
+ * Class permettant de stocker les informations sur les participation des participants
+ * 
+ * @author Ibrahim Akrach
+ * @author Cedric Petetin
+ *
+ */
 public class Participation {
 
 	
@@ -11,6 +17,11 @@ public class Participation {
 	private int annee;
 	private Participants p;
 	
+	/**
+	 * Constructeur
+	 * @param infos Tableau contenant les informations sur une participation
+	 * @param an
+	 */
 	Participation (String infos [],int an) {
 		this.dossard = Integer.parseInt(infos[0]);
 		this.classement = Integer.parseInt(infos[1]);
@@ -23,69 +34,70 @@ public class Participation {
 	}
 
 
+/**
+ * Getter sur le dossard
+ * @return le numero de dossard
+ */
 public int getDossard() {
 	return dossard;
 }
 
 
-public void setDossard(int dossard) {
-	this.dossard = dossard;
-}
-
-
+/**
+ * Gette sur le classement
+ * @return la position a classement
+ */
 public int getClassement() {
 	return classement;
 }
 
 
-public void setClassement(int classement) {
-	this.classement = classement;
-}
-
-
+/**
+ * Getter sur la catégorie
+ * @return la catégorie
+ */
 public String getCategorie() {
 	return categorie;
 }
 
 
-public void setCategorie(String categorie) {
-	this.categorie = categorie;
-}
-
-
+/**
+ * Getter sur l'arrivee
+ * @return le temps
+ */
 public int getArrivee() {
 	String [] arr = arrivee.split("[^0123456789]");
     return (Integer.parseInt(arr[0])*3600)+(Integer.parseInt(arr[1])*60)+Integer.parseInt(arr[2]);
 }
 
 
-public void setArrivee(String arrivee) {
-	this.arrivee = arrivee;
-}
-
+/**
+ * Getter sur le classement dans sa catégorie
+ * @return la position au classement
+ */
 public String getClassement_cat() {
 	return classement_cat;
 }
 
-public void setClassement_cat(String classement_cat) {
-	this.classement_cat = classement_cat;
-}	
 	
 public String toString() {
 	return getDossard() + " " + getClassement() + " " + getArrivee() + " " + getCategorie() + " " + getClassement_cat() + "\n";
 }
 
 
+/**
+ * Getter sur le participant
+ * @return le participant 
+ */
 public Participants getP() {
 	return p;
 }
 
 
-public void setP(Participants p) {
-	this.p = p;
-}
-
-
+/**
+ * Getter sur l'epreuve
+ * @return le nom de l'epreuve
+ */
 public String getEpreuve() {
 	return epreuve;
 } 
