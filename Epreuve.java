@@ -8,9 +8,9 @@ public class Epreuve {
 	private int distance;
 	private String nomCourse;
 	
-	Epreuve(String nom, int distance){
+	Epreuve(String nomCourse, int distance){
 		Coureurs = new ArrayList<Participants>();
-		this.nomCourse = nom;
+		this.nomCourse = nomCourse;
 		this.distance = distance;
 	}
 	

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.TreeSet;
 
 
-//comme
+
 public class Transjurassienne {
 	
 	private TreeSet<Participants> Skieurs;
@@ -13,7 +13,7 @@ public class Transjurassienne {
 	
 	Transjurassienne(){
 		Skieurs = new TreeSet<Participants>();
-		Annee = new ArrayList<Annee>();
+		setAnnee(new ArrayList<Annee>());
 		    File repertoire = new File("./");    
 		    String [] listefichiers;
 		    listefichiers=repertoire.list();
@@ -53,11 +53,11 @@ public class Transjurassienne {
 	    	  
 	    	  
 	          Participants tmp = new Participants(items, 1);
-	          System.out.println(tmp);
+	          //System.out.println(tmp);
 	          
-	          ArrayList<String> nomEpreuve = new ArrayList<String>();
-	          nomEpreuve.add("76FTM");
-	          System.out.println(items[7]);
+	       
+	      
+	          //System.out.println(items[7]);
 	          
 	        
 	          an.addParticipation(items);
@@ -83,9 +83,27 @@ public class Transjurassienne {
 	        
 			System.out.println("Erreur fichier : "+e.getMessage()+" "+e.getLocalizedMessage());
 	    }
-		System.out.println(an);
+		//System.out.println(an);
 		
 	}
+
+	public Annee getAnnee(int i) {
+		for (int j =0;j<Annee.size();j++) {
+			if (Annee.get(j).getAnnee()==i) {
+			return Annee.get(j);
+			}
+			
+		}
+		return null;
+	}
+
+	public void setAnnee(ArrayList<Annee> annee) {
+		Annee = annee;
+	}
+	
+	
+	
+	
 	
 
 }

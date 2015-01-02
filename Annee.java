@@ -23,7 +23,15 @@ Annee(String annee) {
 
 }
 
-
+public Epreuve getEpreuve(String str) {
+	for (int i =0;i<epreuve.size();i++) {
+		if (epreuve.get(i).getNomCourse().equalsIgnoreCase(str)) {
+		return epreuve.get(i);
+		}
+		
+	}
+	return null;
+}
 
 
 
