@@ -43,42 +43,51 @@ public class Participants implements Comparable<Participants>{
 	    addParticipation(infos,an);
 	}
 	
+	/**
+	 * Fonction permettant d'ajouter une participation a une epreuve a un participant
+	 * @param infos tableau contenant les informations nécéssaire a l'ajout d'une participation
+	 * @param an
+	 */
 	public void addParticipation(String infos [], int an) {
 		Participe.add(new Participation(infos, an));
 		
 	}
 	
+	/**
+	 * Getter sur le nom du participant
+	 * @return le nom du participant
+	 */
 	public String getNom() {
 		return nom;
 	}
 	
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
 	
+	/**
+	 * Getter sur la date du participant
+	 * @return la date de naissance du participant
+	 */
 	public int getNaissance() {
 		return naissance;
 	}
 	
-	public void setNaissance(int naissance) {
-		this.naissance = naissance;
-	}
 	
+	/**
+	 * Getter sur la nation du participant
+	 * @return la nation du participant
+	 */
 	public String getNation() {
 		return nation;
 	}
 	
-	public void setNation(String nation) {
-		this.nation = nation;
-	}
-	
+
+	/**
+	 * Getter sur le club du participant
+	 * @return le club du participant
+	 */
 	public String getClub() {
 		return club;
 	}
 	
-	public void setClub(String club) {
-		this.club = club;
-	}
 
 	public int compareTo(Participants p) {
 		if ((((this.nom.equalsIgnoreCase(p.getNom())) && (this.naissance==p.getNaissance()) && (this.club.equalsIgnoreCase(p.getClub())) && (this.nation.equalsIgnoreCase(p.getNation()))))){
@@ -100,6 +109,11 @@ public class Participants implements Comparable<Participants>{
 	}
 
 
+	/**
+	 * Fonction permettant de connaitre le temps mis par le participant pour finir une epreuve
+	 * @param nomEpreuve l'epreuve dont on veut connaitre le temps du participant
+	 * @return le temps mis par le participant pour finir une epreuve
+	 */
 	public double getArrivee(String nomEpreuve) {
 		for(int i =0; i<Participe.size();i++){
 			if(nomEpreuve.equalsIgnoreCase(Participe.get(i).getEpreuve())){
