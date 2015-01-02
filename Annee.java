@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 
 /**
- * Class permettant de stocker 
+ * Class permettant de stocker les epreuves qui on eu lieu durant l'année
  * 
  * @author Ibrahim Akrach
  * @author Cedric Petetin
@@ -15,6 +15,10 @@ public class Annee {
 	private int annee;
 	private ArrayList <Epreuve> epreuve;
 
+/**
+ * Constucteur
+ * @param annee l'année des epreuves a enregistrer
+ */
 Annee(String annee) {
 	this.setAnnee(Integer.parseInt(annee));
 	epreuve = new ArrayList<Epreuve>();
@@ -29,6 +33,12 @@ Annee(String annee) {
 
 }
 
+
+/**
+ * Fonction permetant de rechercher les informations sur une epreuve
+ * @param str le nom de l'epreuve que l'on cherche
+ * @return l'epreuve qui correspond a la recherche
+ */
 public Epreuve getEpreuve(String str) {
 	for (int i =0;i<epreuve.size();i++) {
 		if (epreuve.get(i).getNomCourse().equalsIgnoreCase(str)) {
@@ -41,24 +51,28 @@ public Epreuve getEpreuve(String str) {
 
 
 
+/**
+ * Getter sur l'annee
+ * @return l'annee 
+ */
 public int getAnnee() {
 	return annee;
 }
 
+
+/**
+ * Setter sur l'annee
+ * @param annee
+ */
 public void setAnnee(int annee) {
 	this.annee = annee;
 }
 
-public boolean contient(String items) {
-	Epreuve tmp = new Epreuve(items,Integer.parseInt(items.substring(0,2)));
-	System.out.println("Je suis : "+tmp);
-	return epreuve.contains(tmp);
-}
 
-/*public void addEpreuve(String[] items) {
-	epreuve.add(new Epreuve(items[7],Integer.parseInt(items[7].substring(0,2))));
-}*/
-
+/**
+ * Fonction permetant d'ajouter un participant a une epreuve
+ * @param items
+ */
 public void addParticipation(String[] items) {
 	for (int i=0; i<epreuve.size(); i++) {
 		if (epreuve.get(i).getNomCourse().equalsIgnoreCase(items[7])) {
