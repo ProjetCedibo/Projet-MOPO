@@ -25,8 +25,11 @@ public class fenetre extends JFrame {
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBackground(Color.LIGHT_GRAY);
 		setJMenuBar(menuBar);
+		
+		String an = "";
 		for(int i = 0; i<t.getAnnee().size();i++){
-			JMenuItem menuItem = new JMenuItem(t.getAnnee().get(i).getAnnee());
+			an = Integer.toString(t.getAnnee().get(i).getAnnee());
+			JMenuItem menuItem = new JMenuItem(an);
 			menuBar.add(menuItem);
 		}
 		

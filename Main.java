@@ -20,6 +20,7 @@ public class Main {
 		//System.out.println("resultat de la recherche");
 		//tj.getParticipant("Bourgeois");
 		fenetre fen = new fenetre(tj);
+		fen.setVisible(true);
 		
 	}
 }		
