@@ -38,6 +38,17 @@ public void addParticipation(String[] items) {
 	}
 }
 	
+public String toString() {
+	String str = "";	
+	str = "\n" + getAnnee() + "\n";
+	System.out.println("Biscotte");
+	for (Epreuve ep : epreuve) {
+		str = str + " " + ep.toString();
+		
+	}
+	return str;
+}
+
 }
 
 

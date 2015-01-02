@@ -34,8 +34,6 @@ public class Transjurassienne {
 		  }
 		  
 	public void lectureFichier(String nomFichier, Annee an){
-		
-		
 		try
 	    {  
 	      String ligne;
@@ -55,7 +53,8 @@ public class Transjurassienne {
 	    	  
 	    	  
 	          Participants tmp = new Participants(items);
-	          System.out.println(tmp);
+	         // System.out.println(tmp);
+	          
 	    	 
 	          if (an.contient(items[7])) {
 	        	  an.addEpreuve(items);
@@ -64,9 +63,6 @@ public class Transjurassienne {
 	          else {
 	        	  an.addParticipation(items);
 	          }
-	          
-	          
-	     
 	          
 	          if (Skieurs.contains(tmp)){
 	        	  tmp.addParticipation(items);
@@ -87,16 +83,9 @@ public class Transjurassienne {
 	        
 			System.out.println("Erreur fichier : "+e.getMessage()+" "+e.getLocalizedMessage());
 	    }
-
+		System.out.println(an);
+		
 	}
 	
-	public TreeSet<Participants> getSkieurs() {
-		return Skieurs;
-	}
-	
-	
-	public void setSkieurs(TreeSet<Participants> skieurs) {
-		Skieurs = skieurs;
-	}
 
 }

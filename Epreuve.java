@@ -63,5 +63,16 @@ public class Epreuve implements Comparable<Epreuve> {
 		}
 
 	}
+	public String toString() {
+		String str = "";	
+		str = getNomCourse() + "\n";
+		for (Participants cour : Coureurs) {
+			str = str + " " + cour.toString();
+		}
+		return str;
+	}	
+	
+	
+	
 	
 }
