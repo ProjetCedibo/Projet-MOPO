@@ -1,4 +1,4 @@
-import java.util.TreeSet;
+import java.util.ArrayList;
 
 
 public class Participants implements Comparable<Participants>{
@@ -7,16 +7,23 @@ public class Participants implements Comparable<Participants>{
 	private int naissance;
 	private String club;
 	private String nation;
-	TreeSet <Participation> Participe;
+	ArrayList <Participation> Participe;
 	
 	Participants(String infos []) {
-		Participe = new TreeSet <Participation>();	
+		Participe = new ArrayList<Participation>();	
 		this.nom=infos[2];
 	    this.naissance=Integer.parseInt(infos[3]);
 	    this.club=infos[4];
 	    this.nation=infos[5];
+	    addParticipation(infos);
 	}
-			
+	
+	public void addParticipation(String infos []) {
+		Participe.add(new Participation(infos));
+		
+	}
+	
+	
 	public String getNom() {
 		return nom;
 	}
@@ -51,11 +58,19 @@ public class Participants implements Comparable<Participants>{
 
 	public int compareTo(Participants p) {
 		if ((((this.nom.equalsIgnoreCase(p.getNom())) && (this.naissance==p.getNaissance()) && (this.club.equalsIgnoreCase(p.getClub())) && (this.nation.equalsIgnoreCase(p.getNation()))))){
-			return 1;	
+			return 0;	
 		}
 		else {
-			return 0;
+			return 1;
 		}
 	}
 	
+	public String toString() {
+		return getNom() " " + getNaissance() + " " + getNation() + " " + getClub() + " " ;
+	}
+		
+		
+		
+		
 }
+

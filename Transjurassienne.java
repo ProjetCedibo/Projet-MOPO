@@ -45,15 +45,19 @@ public class Transjurassienne {
 	    	  
 	    	  String[] items=ligne.split(";");
 	          
-	    	  Participants tmp = new Participants(items);
+	    	 
 	    	  
-	    	  if (Skieurs.contains(tmp)){
-	        	  System.out.println("Existe déjà");
+	          Participants tmp = new Participants(items);
+	          System.out.println(tmp);
+	    	 
+	          if (Skieurs.contains(tmp)){
+	        	  tmp.addParticipation(items);
 	          }
 	    	  else {
-	    		  System.out.println("N'existe pas");
+	    		  Skieurs.add(tmp);
+	    		  System.out.println("Je suis passé dans add les amis :) ");
 	    	  }
-	        	  
+	        	 tmp = null; 
 	        	  
 	    	//  for (int i=0;i<items.length;i++) /*System.out.print(items[i]+" ")*/;
 	          /*System.out.println();*/}
@@ -67,12 +71,6 @@ public class Transjurassienne {
 	    }
 
 	}
-	
-	
-	
-	
-	
-	
 	
 	public TreeSet<Participants> getSkieurs() {
 		return Skieurs;
