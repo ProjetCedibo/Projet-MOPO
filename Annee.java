@@ -22,8 +22,9 @@ public void setAnnee(int annee) {
 	this.annee = annee;
 }
 
-public boolean contient(String string) {
-	return epreuve.contains(string);
+public boolean contient(String items) {
+	Epreuve tmp = new Epreuve(items,Integer.parseInt(items.substring(0,2)));
+	return epreuve.contains(tmp);
 }
 
 public void addEpreuve(String[] items) {

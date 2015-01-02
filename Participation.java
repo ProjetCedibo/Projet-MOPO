@@ -7,7 +7,7 @@ public class Participation {
 	private String categorie;
 	private String arrivee;
 	private String classement_cat;
-	
+	private Participants p;
 	
 	Participation (String infos []) {
 		this.dossard = Integer.parseInt(infos[0]);
@@ -15,6 +15,7 @@ public class Participation {
 		this.arrivee = infos[6];
 		this.categorie = infos[8];
 		this.classement_cat=infos[9];	
+		p = new Participants(infos);
 	}
 
 
@@ -68,6 +69,16 @@ public void setClassement_cat(String classement_cat) {
 	
 public String toString() {
 	return getDossard() + " " + getClassement() + " " + getArrivee() + " " + getCategorie() + " " + getClassement_cat();
+}
+
+
+public Participants getP() {
+	return p;
+}
+
+
+public void setP(Participants p) {
+	this.p = p;
 } 
 
 
