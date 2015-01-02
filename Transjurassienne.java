@@ -100,7 +100,13 @@ public class Transjurassienne {
 		Annee = annee;
 	}
 	
-	
+	public ArrayList<Participants> Recherche(String str){
+		
+		
+		
+		return null;
+		
+	}
 	
 	
 	
