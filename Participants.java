@@ -73,8 +73,8 @@ public class Participants implements Comparable<Participants>{
 	}
 	
 	public String toString() {
-		String str = "";	
-		str = getNom() + " " + getNaissance() + " " + getClub() + " " + getNation();
+		String str = "\n";	
+		str = getNom() + " " + getNaissance() + " " + getClub() + " " + getNation() + "\n";
 		for (Participation par : Participe) {
 			str = str + " " + par.toString();	
 		}

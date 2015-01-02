@@ -7,12 +7,25 @@ import java.util.ArrayList;
 
 public class Annee {
 	private int annee;
-	private ArrayList<Epreuve> epreuve;
+	private ArrayList <Epreuve> epreuve;
 
 Annee(String annee) {
 	this.setAnnee(Integer.parseInt(annee));
 	epreuve = new ArrayList<Epreuve>();
+	epreuve.add(new Epreuve("25CTF",25)); 
+	epreuve.add(new Epreuve("25CTM",25));
+	epreuve.add(new Epreuve("25FTF",25));
+	epreuve.add(new Epreuve("25FTM",25));
+	epreuve.add(new Epreuve("50CTF",50));
+	epreuve.add(new Epreuve("50CTM",50));
+	epreuve.add(new Epreuve("76FTF",76));
+	epreuve.add(new Epreuve("76FTM",76));
+
 }
+
+
+
+
 
 public int getAnnee() {
 	return annee;
@@ -25,13 +38,12 @@ public void setAnnee(int annee) {
 public boolean contient(String items) {
 	Epreuve tmp = new Epreuve(items,Integer.parseInt(items.substring(0,2)));
 	System.out.println("Je suis : "+tmp);
-	System.out.println(epreuve.contains(tmp));
 	return epreuve.contains(tmp);
 }
 
-public void addEpreuve(String[] items) {
+/*public void addEpreuve(String[] items) {
 	epreuve.add(new Epreuve(items[7],Integer.parseInt(items[7].substring(0,2))));
-}
+}*/
 
 public void addParticipation(String[] items) {
 	for (int i=0; i<epreuve.size(); i++) {
@@ -44,11 +56,10 @@ public void addParticipation(String[] items) {
 public String toString() {
 	String str = "";	
 	str = "\n" + getAnnee() + "\n";
-	System.out.println("\nBiscotte");
 	for (Epreuve ep : epreuve) {
 		str = str + " " + ep.toString();
 		
-	}
+		}
 	return str;
 }
 

@@ -3,7 +3,7 @@ import java.util.Iterator;
 import java.util.TreeSet;
 
 
-public class Epreuve implements Comparable<Epreuve> {
+public class Epreuve {
 	ArrayList <Participants> Coureurs;
 	private int distance;
 	private String nomCourse;
@@ -53,17 +53,8 @@ public class Epreuve implements Comparable<Epreuve> {
 	    String secondes = String.valueOf((int)((moyenne % 3600) % 60));
 
 	    return heures + "h " + minutes + "min " + secondes + "s";
-		
-	}
+		}
 
-	public int compareTo(Epreuve ep) {
-		if (this.nomCourse.equalsIgnoreCase(ep.getNomCourse())) {
-			return 1;
-		}
-		else {
-			return 1;
-		}
-	}
 	
 	public String toString() {
 		String str = "";	
@@ -74,7 +65,7 @@ public class Epreuve implements Comparable<Epreuve> {
 	    
 	    while (it.hasNext()){
 	    	Participants tmp = it.next();
-	    	tmp.toString();
+	    	str = str + tmp.toString();
 	    }
 		return str;
 	}	
