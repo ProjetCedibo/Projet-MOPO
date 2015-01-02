@@ -19,6 +19,8 @@ public class fenetre extends JFrame {
 	 * Create the frame.
 	 */
 	public fenetre(Transjurassienne t) {
+		setTitle("Transjurassienne");
+		setBackground(Color.LIGHT_GRAY);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		
