@@ -1,6 +1,12 @@
 import java.util.ArrayList;
 
-
+/**
+ * Class permettant de stocker les informationd d'un participant a la transjurassienne
+ * 
+ * @author Ibrahim Akrach
+ * @author Cedric Petetin
+ *
+ */
 public class Participants implements Comparable<Participants>{
 
 	private String nom;
@@ -9,6 +15,10 @@ public class Participants implements Comparable<Participants>{
 	private String nation;
 	ArrayList <Participation> Participe;
 	
+	/**
+	 * Constucteur
+	 * @param infos tableau contenant les informations sur un participant
+	 */
 	Participants(String infos []) {
 		Participe = new ArrayList<Participation>();	
 		this.nom=infos[2];
@@ -19,6 +29,11 @@ public class Participants implements Comparable<Participants>{
 	}
 
 	
+	/**
+	 * Constructeur permettant d'ajouter un participant et une participation
+	 * @param infos tableau contenant les informations sur un participant
+	 * @param an
+	 */
 	Participants(String infos [], int an) {
 		Participe = new ArrayList<Participation>();	
 		this.nom=infos[2];

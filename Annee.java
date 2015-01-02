@@ -35,7 +35,7 @@ Annee(String annee) {
 
 
 /**
- * Fonction permetant de rechercher les informations sur une epreuve
+ * Fonction permettant de rechercher les informations sur une epreuve
  * @param str le nom de l'epreuve que l'on cherche
  * @return l'epreuve qui correspond a la recherche
  */
@@ -70,7 +70,7 @@ public void setAnnee(int annee) {
 
 
 /**
- * Fonction permetant d'ajouter un participant a une epreuve
+ * Fonction permettant d'ajouter un participant a une epreuve
  * @param items
  */
 public void addParticipation(String[] items) {
