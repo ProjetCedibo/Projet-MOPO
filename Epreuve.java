@@ -6,6 +6,15 @@ public class Epreuve {
 	private int distance;
 	private String nomCourse;
 	
+	Epreuve(String nom, int distance){
+		this.nomCourse = nom;
+		this.distance = distance;
+	}
+	
+	public void AddParticipant(){
+		
+	}
+	
 	public int getDistance() {
 		return distance;
 	}
@@ -21,5 +30,7 @@ public class Epreuve {
 	public void setNomCourse(String nomCourse) {
 		this.nomCourse = nomCourse;
 	}
+	
+	
 	
 }
