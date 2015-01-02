@@ -4,7 +4,13 @@ import java.io.FileReader;
 import java.util.ArrayList;
 
 
-
+/**
+ * Class permettant de stocker 
+ * 
+ * @author Ibrahim Akrach
+ * @author Cedric Petetin
+ *
+ */
 public class Annee {
 	private int annee;
 	private ArrayList <Epreuve> epreuve;
