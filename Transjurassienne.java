@@ -105,18 +105,15 @@ public class Transjurassienne {
 	    return p1.getNom().compareToIgnoreCase( p2.getNom());
 	 }
 	
+	 public void getName(String s){
+	        for(Participants p : Skieurs) 
+	        {
+	            if(s.toLowerCase().startsWith(s.toLowerCase()))
+	                System.out.println(p);
+	        }
+	    }
 	
-	
-	
-	
-	public ArrayList<Participants> Recherche(String str){
-		SortedSet<Participants> s = Skieurs.subSet(str, str+Character.MAX_VALUE);
-		return s;
-		
-		return null;
-		
-	}
-	
+
 	
 	
 
