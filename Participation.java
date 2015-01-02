@@ -18,6 +18,11 @@ public class Participation {
 	}
 
 
+public Participation() {
+
+	}
+
+
 public int getDossard() {
 	return dossard;
 }
@@ -48,8 +53,9 @@ public void setCategorie(String categorie) {
 }
 
 
-public String getArrivee() {
-	return this.arrivee;
+public int getArrivee() {
+	String [] arr = arrivee.split("[^0123456789]");
+    return (Integer.parseInt(arr[0])*3600)+(Integer.parseInt(arr[1])*60)+Integer.parseInt(arr[2]);
 }
 
 

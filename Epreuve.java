@@ -1,3 +1,4 @@
+import java.util.Iterator;
 import java.util.TreeSet;
 
 
@@ -33,6 +34,24 @@ public class Epreuve {
 	
 	public int nombreParticipant(){
 		return Coureurs.size();
+	}
+	
+	public String DureeMoyenne(){
+		double moyenne = 0.0;
+		Iterator iterator;
+	    iterator = Coureurs.iterator();
+	    
+	    while (iterator.hasNext()){
+	    	Participation tmp = (Participation) iterator.next();
+			moyenne = moyenne + (double)(tmp.getArrivee());
+		}
+	    moyenne = moyenne / (double)(Coureurs.size());
+	    String heures   = String.valueOf((int)(moyenne/3600));
+	    String minutes  = String.valueOf((int)((moyenne % 3600) / 60));
+	    String secondes = String.valueOf((int)((moyenne % 3600) % 60));
+
+	    return heures + "h " + minutes + "min " + secondes + "s";
+		
 	}
 	
 }
