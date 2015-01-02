@@ -4,6 +4,7 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.TreeSet;
 
+//Petetach
 
 public class Transjurassienne {
 	
@@ -56,6 +57,12 @@ public class Transjurassienne {
 	          Participants tmp = new Participants(items);
 	          System.out.println(tmp);
 	    	 
+	          
+	          
+	          
+	          
+	     
+	          
 	          if (Skieurs.contains(tmp)){
 	        	  tmp.addParticipation(items);
 	          }
