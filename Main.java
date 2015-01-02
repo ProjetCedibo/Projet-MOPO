@@ -19,7 +19,7 @@ public class Main {
 		System.out.println(tj.getAnnee(2011).getEpreuve("76FTM").nombreParticipant());
 		//System.out.println("resultat de la recherche");
 		//tj.getParticipant("Bourgeois");
-		//fenetre fen = new fenetre();
+		fenetre fen = new fenetre(tj);
 		
 	}
 }		

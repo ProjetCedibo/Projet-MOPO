@@ -98,8 +98,17 @@ public class Transjurassienne {
 
 	/**
 	 * Getter sur Annee
-	 * @param i la structure Annee que l'on cherche
-	 * @return la structure Annee qui correspond a i
+	 * @return L'arraylist des années
+	 */
+	public ArrayList<Annee> getAnnee() {
+		return Annee;
+	}
+	
+	
+	/**
+	 * Getter sur une annee précise
+	 * @param i l'annee chercher
+	 * @return l'annee chercher
 	 */
 	public Annee getAnnee(int i) {
 		for (int j =0;j<Annee.size();j++) {
@@ -110,6 +119,9 @@ public class Transjurassienne {
 		}
 		return null;
 	}
+
+	
+
 
 	/**
 	 * Setter sur l'Annee
