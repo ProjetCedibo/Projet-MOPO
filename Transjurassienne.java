@@ -5,12 +5,22 @@ import java.util.ArrayList;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-
+/**
+ * Class permettant de stocker les informations sur la transjurassienne
+ * 
+ * @author Ibrahim Akrach
+ * @author Cedric Petetin
+ *
+ */
 public class Transjurassienne {
 	
 	private TreeSet<Participants> Skieurs;
 	private ArrayList<Annee> Annee;
 	
+	/**
+	 * Constructeur
+	 * il recherche tout les fichiers .csv dans lesquels sont stocké les informations 
+	 */
 	Transjurassienne(){
 		Skieurs = new TreeSet<Participants>();
 		setAnnee(new ArrayList<Annee>());
@@ -32,7 +42,13 @@ public class Transjurassienne {
 		      }    
 		    }
 		  }
+	
 		  
+	/**
+	 * Fonction permettant d'enregistrer le contenue d'un fichier 
+	 * @param nomFichier le nom du fichier
+	 * @param an objet contenant les informations sur l'annee
+	 */
 	public void lectureFichier(String nomFichier, Annee an){
 		try
 	    {  
@@ -44,13 +60,6 @@ public class Transjurassienne {
 	      while ((ligne = lecteurAvecBuffer.readLine()) != null){
 	    	  
 	    	  String[] items=ligne.split(";");
-	          
-	    	 
-	    	  /*
-	    	   * C'est la qu'il faut tester si l'epreuve est connu ou non 
-	    	   * je pense il faut passé l'Annee en param du coup XD
-	    	   */
-	    	  
 	    	  
 	          Participants tmp = new Participants(items, an.getAnnee());
 	          //System.out.println(tmp);
@@ -87,6 +96,11 @@ public class Transjurassienne {
 		
 	}
 
+	/**
+	 * Getter sur Annee
+	 * @param i la structure Annee que l'on cherche
+	 * @return la structure Annee qui correspond a i
+	 */
 	public Annee getAnnee(int i) {
 		for (int j =0;j<Annee.size();j++) {
 			if (Annee.get(j).getAnnee()==i) {
@@ -97,6 +111,10 @@ public class Transjurassienne {
 		return null;
 	}
 
+	/**
+	 * Setter sur l'Annee
+	 * @param annee
+	 */
 	public void setAnnee(ArrayList<Annee> annee) {
 		Annee = annee;
 	}
