@@ -91,6 +91,15 @@ public String toString() {
 	return str;
 }
 
+
+/**
+ * Getter sur les epreuves
+ * @return l'arraylist des epreuve
+ */
+public ArrayList<Epreuve> getEpreuve() {
+	return epreuve;
+}
+
 }
 
 

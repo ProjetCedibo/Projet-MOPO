@@ -81,6 +81,12 @@ public class Epreuve {
 	    return heures + "h " + minutes + "min " + secondes + "s";
 		}
 
+	public boolean Exist(){
+		if(Coureurs.size()>0){
+			return true;
+		}
+		return false;
+	}
 	
 	public String toString() {
 		String str = "";	
