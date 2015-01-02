@@ -15,7 +15,7 @@ public class Epreuve {
 	}
 	
 	public void addParticipants(String items []){
-		Coureurs.add(new Participants(items));
+		Coureurs.add(new Participants(items, 1));
 	}
 	
 	public int getDistance() {
@@ -66,6 +66,7 @@ public class Epreuve {
 	    while (it.hasNext()){
 	    	Participants tmp = it.next();
 	    	str = str + tmp.toString();
+
 	    }
 		return str;
 	}	

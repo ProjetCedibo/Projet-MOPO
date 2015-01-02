@@ -68,7 +68,7 @@ public void setClassement_cat(String classement_cat) {
 }	
 	
 public String toString() {
-	return getDossard() + " " + getClassement() + " " + getArrivee() + " " + getCategorie() + " " + getClassement_cat();
+	return getDossard() + " " + getClassement() + " " + getArrivee() + " " + getCategorie() + " " + getClassement_cat() + "\n";
 }
 
 
