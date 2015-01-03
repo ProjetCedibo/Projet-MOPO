@@ -24,13 +24,13 @@ public class BarreMenu extends JMenuBar implements MouseListener{
 	private ArrayList<MenuTop> menu;
 	private ArrayList<JMenu> jmenu; 
 	private Transjurassienne t;
-	private FenetrePrincipale fenetre;
+	private FenetrePrincipale fen;
 	
 	/**
 	 * Create the frame.
 	 */
 	public BarreMenu(FenetrePrincipale fenetre) {
-		this.fenetre = fenetre;
+		this.fen = fenetre;
 		t = fenetre.getTransjurassienne();
 		jmenu= new ArrayList<JMenu>();
 		menu = new ArrayList<MenuTop>();
@@ -72,8 +72,9 @@ public class BarreMenu extends JMenuBar implements MouseListener{
 	private void action(int indiceMenu, int indiceMenuItem){
 		String annee = jmenu.get(indiceMenu).getText();
 		String course = menu.get(indiceMenu).get(indiceMenuItem-1).getText();
-		System.out.println(annee + " "+ course +"\n");
-		System.out.println(t.affiche10(annee, course, 0) + "\n");
+		fen.setAnnee(annee);
+		fen.setCourse(course);
+		fen.actualiserDonnee();
 	}
 
 	@Override

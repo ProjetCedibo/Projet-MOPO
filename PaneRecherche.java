@@ -49,7 +49,9 @@ public class PaneRecherche extends JPanel implements ActionListener {
 		textResultat.setBackground(new Color(200,255,200));
 		
 		scrollPane = new JScrollPane();
-		scrollPane.add(textResultat);
+		JPanel pane = new JPanel();
+		pane.add(textResultat);
+		scrollPane.add(pane);
 		
 		commande = new JPanel();
 		commande.setLayout(new GridLayout(1, 3));

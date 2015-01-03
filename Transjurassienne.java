@@ -16,12 +16,14 @@ public class Transjurassienne{
 	
 	private TreeSet<Participants> Skieurs;
 	private ArrayList<Annee> Annee;
+	private FenetrePrincipale fen;
 	
 	/**
 	 * Constructeur
 	 * il recherche tous les fichiers .csv dans lesquels sont stockés les informations 
 	 */
-	Transjurassienne(){
+	 public Transjurassienne(FenetrePrincipale fp){
+		this.fen = fp;
 		Skieurs = new TreeSet<Participants>();
 		setAnnee(new ArrayList<Annee>());
 		    File repertoire = new File("./");    

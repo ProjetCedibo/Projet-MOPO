@@ -24,10 +24,14 @@ public class FenetrePrincipale extends JFrame {
 	private PaneClassement paneClas;
 	private PanePalmares panePalma;
 	private PanePays panePay;
+	private String annee, course;
+	private boolean execute = false;
 	
-	public FenetrePrincipale(String titre, Transjurassienne t) {
+
+
+	public FenetrePrincipale(String titre) {
 		super(titre);
-		this.t = t;
+		this.t = new Transjurassienne(this);;
 		initComposant();
 		initFenetre();
 	}
@@ -61,13 +65,18 @@ public class FenetrePrincipale extends JFrame {
 	}
 	
 	public void actualiserDonnee() {
-		paneClas = new PaneClassement(t);
-		panePalma = new PanePalmares(t);
-		panePay = new PanePays(t);
-		paneTab.removeAll();
-		paneTab.add(paneClas);
-		paneTab.add(panePalma);
-		paneTab.add(panePay);
+		if(!execute){
+			execute = true;
+			paneClas = new PaneClassement(this);
+			panePalma = new PanePalmares(t);
+			panePay = new PanePays(t);
+			paneTab.removeAll();
+			paneTab.add(paneClas);
+			paneTab.add(panePalma);
+			paneTab.add(panePay);
+		}
+		paneClas.actualiserDonnees();
+		
 	}
 	
 	private void quitter() {
@@ -90,4 +99,19 @@ public class FenetrePrincipale extends JFrame {
 		return t;
 	}
 
+	public String getAnnee() {
+		return annee;
+	}
+
+	public void setAnnee(String annee) {
+		this.annee = annee;
+	}
+
+	public String getCourse() {
+		return course;
+	}
+
+	public void setCourse(String course) {
+		this.course = course;
+	}
 }

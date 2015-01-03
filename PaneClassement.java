@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -14,26 +15,36 @@ public class PaneClassement extends JPanel implements ActionListener {
 	private JButton bPrecedent;
 	private JButton bSuivant;
 	private Transjurassienne tj;
+	private FenetrePrincipale fen;
 	
 	private int indiceClassement = 0;
 	private int indiceMax;
 	private Tableau tableau;
-	private Object[][] donnees;
+	private Object[][] donnees = {{"tata","Mehdi"},{"IBO", "test"}, {"petet","ced"}};
 	private String[] entetes = {"Participant" , "Classement"};
 	
-	public PaneClassement(Transjurassienne t) {
+	public PaneClassement(FenetrePrincipale fp) {
 		super();
-		this.tj = t;
+		//donnees = new Object[10][2];
+		this.fen = fp;
+		this.tj = fp.getTransjurassienne();
 		indiceMax = 20;
 		initBouton();
-		actualiserDonnees();
 		setLayout(new BorderLayout());
-		add(tableau, BorderLayout.CENTER);
-		add(paneBouton, BorderLayout.SOUTH);
+		actualiserDonnees();
 	}
 	
-	private void actualiserDonnees() {
+	public void actualiserDonnees() {
+		ArrayList<Participants> par = tj.affiche10(fen.getAnnee(), fen.getCourse(), indiceClassement);
+		/*for(int i = 0; i<10;i++){
+			donnees[i][0]=par.get(i).getNom();
+			donnees[i][1]=""+(i+1);
+		}
+		*/
 		tableau = new Tableau(entetes, donnees);
+		removeAll();
+		add(tableau, BorderLayout.CENTER);
+		add(paneBouton, BorderLayout.SOUTH);
 	}
 	
 	private void initBouton() {
