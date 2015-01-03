@@ -3,7 +3,11 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Set;
 import java.util.TreeSet;
+import java.io.*;
+import java.util.regex.*;
+
 
 /**
  * Classe permettant de stocker les informations sur la transjurassienne
@@ -16,7 +20,8 @@ public class Transjurassienne{
 	
 	private TreeSet<Participants> Skieurs;
 	private ArrayList<Annee> Annee;
-	
+    private static Pattern pattern;
+	private static Matcher matcher;
 	/**
 	 * Constructeur
 	 * il recherche tous les fichiers .csv dans lesquels sont stockés les informations 
@@ -137,23 +142,41 @@ public class Transjurassienne{
 	public void setAnnee(ArrayList<Annee> annee) {
 		Annee = annee;
 	}
-
-
-	 public ArrayList<Participants> Recherche(String str) {
-		 int cpt=0, cpt2=0;
+	
+	 
+	public TreeSet<Participants> Recherche(String str) {
+		 int cpt=0, cpt2=0, i=0;
 		 ArrayList <Participants> Resultats = new ArrayList<Participants>();
-		 
+		 ArrayList <String> prenom = new ArrayList<String>();
+		 TreeSet<Participants> prenom2 = new TreeSet<Participants>();	
 		 Iterator<Participants> it;
 		 it = Skieurs.iterator();
 		 
-		 while (it.hasNext()){
-		 	cpt=0;
-		 	cpt2=0;
-		 	
-		 	
-		 	Participants par = it.next();
+		 
+		 while(it.hasNext()) {
+			 Participants par = it.next();
+			// System.out.println(par.getNom());
+			 
+			 pattern = Pattern.compile(str);
+			 matcher = pattern.matcher(par.getNom());
+			
+			 while(matcher.find()) {
+				   prenom2.add(par);
+				   
+				   for (i=0;i<prenom.size();i++)
+				   System.out.println(prenom.get(i));
+			  	   }
+			 		
+		 } 
+		 
+		 
+		    /*
+		 	noms.add(par.getNom().split(" ")[0]);
+		 	prenom.add(par.getNom().split(" ")[1]);
+		 	String[] s = str.split("+");
 		 	//String[] noms=par.getNom().split(" ");
-		 	
+		 	System.out.println("Noms: "+noms.get(0));
+		 	System.out.println("Prénoms : "+prenom.get(0));
 		 	for(int i = 0 ; i< str.length(); i++){
 		 		if(par.getNom().charAt(i) == ' '){
 		 			cpt = 0;
@@ -166,22 +189,14 @@ public class Transjurassienne{
 		 	}
 		 
 		 		if (cpt == str.length()){
-		 			System.out.println(par.getNom());
+		 			//System.out.println(par.getNom());
 		 			Resultats.add(par);
 		 		}
-		 	}
+		 	}*/
 		 
-		 return Resultats;
-		 }
+		return prenom2;
+		}
 	
-	/*Manon = 5 caractères
-	On compte le nombre de caractères
-	Et on évalue des blocs de 5 caractères qui valent "Manon"*/
-    
-   
-    	
-   
-	
-	
-
 }
+
+
