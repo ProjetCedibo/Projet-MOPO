@@ -121,7 +121,14 @@ public class Transjurassienne {
 	}
 
 	
-
+	public ArrayList<Participants> affiche10(String annee, String course, int debut){
+		ArrayList<Participants> TopDix = new ArrayList<Participants>(10);
+		/*for(int i = 0; i< 10; i++){
+				TopDix.add(getAnnee(Integer.parseInt(annee)).getEpreuve(course).Coureurs.get(i+debut));
+		}*/
+		TopDix.addAll(getAnnee(Integer.parseInt(annee)).getEpreuve(course).Coureurs.subList(debut, debut+10));
+		return TopDix;
+	}
 
 	/**
 	 * Setter sur l'Année
