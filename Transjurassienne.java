@@ -152,14 +152,24 @@ public class Transjurassienne{
 	
 
 	public ArrayList<Participants> Recherche(String str) {
+<<<<<<< HEAD
 		int cpt=0, cpt2=0; 
 		String[] noms;
 		String tmp;
+=======
+		int cpt=0; 
+		
+>>>>>>> parent of be7dbb1... BLANC
 		ArrayList <Participants> Resultats = new ArrayList<Participants>();
+		
 		Iterator<Participants> it;
+	    
 		it = Skieurs.iterator();
-	   
+	    
+		System.out.println("Avant le while"); 
+	    
 		while (it.hasNext()){
+<<<<<<< HEAD
 			
 			
 	    	cpt=0; 
@@ -172,6 +182,18 @@ public class Transjurassienne{
 			
 			for(int i=0;i< str.length(); i++){
 					if(noms[0].charAt(i) == str.charAt(i) && (cpt<str.length())){ 
+=======
+	    	System.out.println("Après le while"); 
+	    	cpt=0;
+	    	System.out.println(cpt); 
+			Participants par = it.next();	
+			
+			for(int i = 0 ; i< par.getNom().length();i++){
+					System.out.println("Dans le for"); 
+					
+					if(par.getNom().charAt(i)==str.charAt(cpt)){
+						System.out.println("Dans le if1"); 
+>>>>>>> parent of be7dbb1... BLANC
 						cpt++;
 					}	 	
 			
