@@ -16,66 +16,25 @@ public class Main {
 	public static void main(String[] args) {
 
 		System.out.println("\nXoxo ! :) ");
-<<<<<<< HEAD
-		System.out.println(tj.Recherche("Benoît"));
-=======
-		//tj.Recherche("Samuel");
->>>>>>> FETCH_HEAD
+		//System.out.println(tj.Recherche("Benoît"));
 		//System.out.println(tj.getAnnee(2011).getEpreuve("76FTM"));
 		//System.out.println(tj.getAnnee(2011).getEpreuve("76FTF"));
 		//System.out.println(tj.getAnnee(2011).getEpreuve("76FTM").DureeMoyenne());
 		//System.out.println(tj.getAnnee(2011).getEpreuve("76FTM").nombreParticipant());
-<<<<<<< HEAD
-		//fenetre fen = new fenetre(tj);
-		//fen.setVisible(true);
-=======
+
 		//System.out.println(tj.getPalmares("76FTF"));
 		new FenetrePrincipale("Transjurassienne");
->>>>>>> FETCH_HEAD
+		
+		//Les fonctions pour l'affichage :
+		// les 10 participant d'une course dans Transjurassienne: 
+		//affiche10(String annee, String course, int debut) 
+		//Récupere le nombre de participants :
+		//tj.getAnnee(int Annee).getEpreuve(String epreuve ).nombreParticipant()
+		//Récupérer le temps moyen : 
+		// tj.getAnnee(2011).getEpreuve("76FTM").DureeMoyenne()
+		// Récupérer le palmares : 
+		//tj.getPalmares(String epreuve)
 		
 		
-		
-		
-		
-		/*public ArrayList<Participants> Recherche(String str) {
-			 
-			 int cpt=0, cpt2=0;
-			 ArrayList <Participants> Resultats = new ArrayList<Participants>();
-			 
-			 Iterator<Participants> it;
-			 it = Skieurs.iterator();
-			 
-			 while (it.hasNext()){
-			 	cpt=0;
-			 	cpt2=0;
-			 	Participants par = it.next();
-			 	
-			 	ArrayList <String> noms = new ArrayList<String>();
-			 	ArrayList <String> prenom = new ArrayList<String>();
-			 	noms.add(par.getNom().split(" ")[0]);
-			 	prenom.add(par.getNom().split(" ")[1]);
-			 	String[] s = str.split("+");
-			 	//String[] noms=par.getNom().split(" ");
-			 	System.out.println("Noms: "+noms.get(0));
-			 	System.out.println("Prénoms : "+prenom.get(0));
-			 	for(int i = 0 ; i< str.length(); i++){
-			 		if(par.getNom().charAt(i) == ' '){
-			 			cpt = 0;
-			 		}
-			 		
-			 		if(par.getNom().charAt(i) == str.charAt(cpt2) && (cpt<str.length())){
-			 			cpt++;
-			 		}
-			 		cpt2++;
-			 	}
-			 
-			 		if (cpt == str.length()){
-			 			//System.out.println(par.getNom());
-			 			Resultats.add(par);
-			 		}
-			 	}
-			 
-			 return Resultats;
-			 }*/
 	}
 }		

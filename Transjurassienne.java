@@ -20,13 +20,10 @@ public class Transjurassienne{
 	
 	private TreeSet<Participants> Skieurs;
 	private ArrayList<Annee> Annee;
-<<<<<<< HEAD
     private static Pattern pattern;
 	private static Matcher matcher;
-=======
 	private FenetrePrincipale fen;
 	
->>>>>>> FETCH_HEAD
 	/**
 	 * Constructeur
 	 * il recherche tous les fichiers .csv dans lesquels sont stockés les informations 
@@ -136,19 +133,13 @@ public class Transjurassienne{
 	public void setAnnee(ArrayList<Annee> annee) {
 		Annee = annee;
 	}
-<<<<<<< HEAD
-	
-	 
-	public TreeSet<Participants> Recherche(String str) {
-		 int cpt=0, cpt2=0, i=0;
-=======
+
 
 	
 
 
-	 public ArrayList<Participants> recherche(String str) {
+	 public TreeSet<Participants> recherche(String str) {
 		 int cpt=0, cpt2=0;
->>>>>>> FETCH_HEAD
 		 ArrayList <Participants> Resultats = new ArrayList<Participants>();
 		 ArrayList <String> prenom = new ArrayList<String>();
 		 TreeSet<Participants> prenom2 = new TreeSet<Participants>();	
@@ -166,7 +157,7 @@ public class Transjurassienne{
 			 while(matcher.find()) {
 				   prenom2.add(par);
 				   
-				   for (i=0;i<prenom.size();i++)
+				   for (int i=0;i<prenom.size();i++)
 				   System.out.println(prenom.get(i));
 			  	   }
 			 		
@@ -197,13 +188,10 @@ public class Transjurassienne{
 		 		}
 		 	}*/
 		 
-<<<<<<< HEAD
+
 		return prenom2;
 		}
-=======
-		 return Resultats;
-		 }
-	
+
     
    
     public ArrayList<String> getPalmares(String epreuve){
@@ -217,9 +205,6 @@ public class Transjurassienne{
     	}
     	return res;
     }
-   
-	
->>>>>>> FETCH_HEAD
 	
 }
 
