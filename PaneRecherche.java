@@ -6,6 +6,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.TreeSet;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -68,7 +69,7 @@ public class PaneRecherche extends JPanel implements ActionListener {
 
 	private void actionRecherche() {
 		//textResultat.setText("TOTO");
-		ArrayList<Participants> par = t.recherche(textRecherche.getText());
+		TreeSet<Participants> par = t.recherche(textRecherche.getText());
 		String str = "";
 		for(int i = 0; i< par.size(); i++){
 			str += par.get(i);
