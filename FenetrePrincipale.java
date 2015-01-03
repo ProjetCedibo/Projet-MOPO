@@ -14,7 +14,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-public class FenetrePrincipale extends JFrame implements ActionListener{
+public class FenetrePrincipale extends JFrame {
 	
 	private JPanel panePrincipal;
 	private JPanel paneTab;
@@ -37,7 +37,7 @@ public class FenetrePrincipale extends JFrame implements ActionListener{
 		paneTab = new JPanel();
 		paneTab.setLayout(new GridLayout(1, 3));
 		
-		paneRecherche = new PaneRecherche(this);
+		paneRecherche = new PaneRecherche(t);
 		
 		panePrincipal = new JPanel();
 		panePrincipal.setLayout(new GridLayout(2, 1));
@@ -90,9 +90,4 @@ public class FenetrePrincipale extends JFrame implements ActionListener{
 		return t;
 	}
 
-	@Override
-	public void actionPerformed(ActionEvent event) {
-		if (event.getSource() == paneRecherche.getButtonRechercher()) 
-			paneRecherche.actionRecherche();
-	}
 }
