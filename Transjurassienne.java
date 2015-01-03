@@ -73,28 +73,17 @@ public class Transjurassienne{
 	    	  String[] items=ligne.split(";");
 	    	  
 	          Participants tmp = new Participants(items, an.getAnnee());
-	          //System.out.println(tmp);
-	          
-	       
-	      
-	          //System.out.println(items[7]);
-	          
-	        
 	          an.addParticipation(items);
-	        	 
-	          
-	          
+
 	          if (Skieurs.contains(tmp)){
 	        	  tmp.addParticipation(items,an.getAnnee());
 	          }
 	    	  else {
 	    		  Skieurs.add(tmp);
-	    		  //System.out.println("Je suis passé dans add les amis :) ");
 	    	  }
 	        	 tmp = null; 
 	        	  
-	    	//  for (int i=0;i<items.length;i++) /*System.out.print(items[i]+" ")*/;
-	          /*System.out.println();*/}
+	    	}
 	      
 	      	  lecteurAvecBuffer.close();
 	    }
@@ -103,8 +92,7 @@ public class Transjurassienne{
 	        
 			System.out.println("Erreur fichier : "+e.getMessage()+" "+e.getLocalizedMessage());
 	    }
-		//System.out.println(an);
-		
+
 	}
 
 	/**

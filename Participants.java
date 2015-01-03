@@ -124,7 +124,7 @@ public class Participants implements Comparable<Participants>{
 			return -1;
 		}
 	}
-
+	
 
 	private ArrayList<Participation> getParticipe() {
 		return Participe;
