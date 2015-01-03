@@ -100,6 +100,11 @@ public Participants getP() {
  */
 public String getEpreuve() {
 	return epreuve;
+}
+
+
+public int getannee() {
+	return annee;
 } 
 
 }

@@ -24,7 +24,6 @@ public class Main {
 
 		//System.out.println(tj.getPalmares("76FTF"));
 		FenetrePrincipale fen = new FenetrePrincipale("Transjurassienne");
-		Transjurassienne tj = new Transjurassienne(fen);
 		
 		//System.out.println(tj.recherche("Manon"));
 		

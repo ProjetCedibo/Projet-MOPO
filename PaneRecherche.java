@@ -77,7 +77,8 @@ public class PaneRecherche extends JPanel implements ActionListener {
 		 str = "";
 		 while(it.hasNext()){
 			 Participants par = it.next();
-			 str += par.getNom() + "\n";
+			 str += par.getNom() +" A participer en "+ par.getParticipe().get(0).getannee() +" A l'epreuve :"+ par.getParticipe().get(0).getEpreuve() + "\n";
+			 
 		 }
 		 	System.out.println(str);
 		 //textResultat = new JTextArea("TOTO");
