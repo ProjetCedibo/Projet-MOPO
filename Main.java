@@ -18,9 +18,8 @@ public class Main {
 		//System.out.println(tj.getAnnee(2011).getEpreuve("76FTF"));
 		//System.out.println(tj.getAnnee(2011).getEpreuve("76FTM").DureeMoyenne());
 		//System.out.println(tj.getAnnee(2011).getEpreuve("76FTM").nombreParticipant());
-		System.out.println(tj.getPalmares("76FTM"));
-		fenetre fen = new fenetre(tj);
-		fen.setVisible(true);
+		System.out.println(tj.getPalmares("76FTF"));
+		//new FenetrePrincipale("Transjurassienne", tj);
 		
 	}
 }		

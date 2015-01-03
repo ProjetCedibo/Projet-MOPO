@@ -141,7 +141,7 @@ public class Transjurassienne{
 	
 
 
-	 public ArrayList<Participants> Recherche(String str) {
+	 public ArrayList<Participants> recherche(String str) {
 		 int cpt=0, cpt2=0;
 		 ArrayList <Participants> Resultats = new ArrayList<Participants>();
 		 
@@ -176,17 +176,14 @@ public class Transjurassienne{
 		 return Resultats;
 		 }
 	
-	/*Manon = 5 caractères
-	On compte le nombre de caractères
-	Et on évalue des blocs de 5 caractères qui valent "Manon"*/
     
    
-    public ArrayList<Participants> getPalmares(String epreuve){
-    	ArrayList <Participants> res = new ArrayList<Participants>();
+    public ArrayList<String> getPalmares(String epreuve){
+    	ArrayList <String> res = new ArrayList<String>();
     	for(int i = 0; i < Annee.size(); i++){
     		for(int j = 0; j < Annee.get(i).getEpreuve().size(); j++){
     			if(Annee.get(i).getEpreuve().get(j).getNomCourse().equals(epreuve) && Annee.get(i).getEpreuve().get(j).Exist()){
-    				res.add(Annee.get(i).getEpreuve().get(j).getFirst());
+    				res.add(Annee.get(i).getEpreuve().get(j).getFirst().getNom());
     			}
     		}
     	}
