@@ -68,8 +68,8 @@ public class FenetrePrincipale extends JFrame {
 		if(!execute){
 			execute = true;
 			paneClas = new PaneClassement(this);
-			panePalma = new PanePalmares(t);
-			panePay = new PanePays(t);
+			panePalma = new PanePalmares(this);
+			panePay = new PanePays(this);
 			paneTab.removeAll();
 			paneTab.add(paneClas);
 			paneTab.add(panePalma);

@@ -108,6 +108,11 @@ public class Epreuve {
 
 	    }
 		return str;
+	}
+
+
+	public ArrayList<Participants> getParticipants() {
+		return Coureurs;
 	}	
 	
 	

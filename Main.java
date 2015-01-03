@@ -23,7 +23,10 @@ public class Main {
 		//System.out.println(tj.getAnnee(2011).getEpreuve("76FTM").nombreParticipant());
 
 		//System.out.println(tj.getPalmares("76FTF"));
-		new FenetrePrincipale("Transjurassienne");
+		FenetrePrincipale fen = new FenetrePrincipale("Transjurassienne");
+		Transjurassienne tj = new Transjurassienne(fen);
+		
+		//System.out.println(tj.recherche("Manon"));
 		
 		//Les fonctions pour l'affichage :
 		// les 10 participant d'une course dans Transjurassienne: 
@@ -34,7 +37,6 @@ public class Main {
 		// tj.getAnnee(2011).getEpreuve("76FTM").DureeMoyenne()
 		// Récupérer le palmares : 
 		//tj.getPalmares(String epreuve)
-		
 		
 	}
 }		

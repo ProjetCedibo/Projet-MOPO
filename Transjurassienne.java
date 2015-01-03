@@ -18,7 +18,7 @@ import java.util.regex.*;
  */
 public class Transjurassienne{
 	
-	private TreeSet<Participants> Skieurs;
+	private Set<Participants> Skieurs;
 	private ArrayList<Annee> Annee;
     private static Pattern pattern;
 	private static Matcher matcher;
@@ -137,64 +137,35 @@ public class Transjurassienne{
 
 	
 
-
-	 public TreeSet<Participants> recherche(String str) {
-		 int cpt=0, cpt2=0;
-		 ArrayList <Participants> Resultats = new ArrayList<Participants>();
-		 ArrayList <String> prenom = new ArrayList<String>();
-		 TreeSet<Participants> prenom2 = new TreeSet<Participants>();	
-		 Iterator<Participants> it;
-		 it = Skieurs.iterator();
-		 
-		 
-		 while(it.hasNext()) {
-			 Participants par = it.next();
+	public TreeSet<Participants> recherche(String str) {
+		int i=0;
+		ArrayList <String> prenom = new ArrayList<String>();
+		TreeSet<Participants> prenom2 = new TreeSet<Participants>();
+		
+		Iterator<Participants> it;
+		it = Skieurs.iterator();
+		
+		while(it.hasNext()) {
+			Participants par = it.next();
 			// System.out.println(par.getNom());
-			 
-			 pattern = Pattern.compile(str);
-			 matcher = pattern.matcher(par.getNom());
+			pattern = Pattern.compile(str);
+			matcher = pattern.matcher(par.getNom());
 			
-			 while(matcher.find()) {
-				   prenom2.add(par);
-				   
-				   for (int i=0;i<prenom.size();i++)
-				   System.out.println(prenom.get(i));
-			  	   }
-			 		
-		 } 
-		 
-		 
-		    /*
-		 	noms.add(par.getNom().split(" ")[0]);
-		 	prenom.add(par.getNom().split(" ")[1]);
-		 	String[] s = str.split("+");
-		 	//String[] noms=par.getNom().split(" ");
-		 	System.out.println("Noms: "+noms.get(0));
-		 	System.out.println("Prénoms : "+prenom.get(0));
-		 	for(int i = 0 ; i< str.length(); i++){
-		 		if(par.getNom().charAt(i) == ' '){
-		 			cpt = 0;
-		 		}
-		 		
-		 		if(par.getNom().charAt(i) == str.charAt(cpt2) && (cpt<str.length())){
-		 			cpt++;
-		 		}
-		 		cpt2++;
-		 	}
-		 
-		 		if (cpt == str.length()){
-		 			//System.out.println(par.getNom());
-		 			Resultats.add(par);
-		 		}
-		 	}*/
-		 
-
+			while(matcher.find()) {
+				prenom2.add(par);
+				
+				/*for (i=0;i<prenom.size();i++){
+					//System.out.println(prenom.get(i));
+				}*/
+			}
+		}
 		return prenom2;
 		}
 
+
     
    
-    public ArrayList<String> getPalmares(String epreuve){
+    public ArrayList<String> getPalmaresNoms(String epreuve){
     	ArrayList <String> res = new ArrayList<String>();
     	for(int i = 0; i < Annee.size(); i++){
     		for(int j = 0; j < Annee.get(i).getEpreuve().size(); j++){
@@ -202,6 +173,57 @@ public class Transjurassienne{
     				res.add(Annee.get(i).getEpreuve().get(j).getFirst().getNom());
     			}
     		}
+    	}
+    	return res;
+    }
+    
+    public ArrayList<Integer> getPalmaresAnnee(String epreuve){
+    	ArrayList <Integer> res = new ArrayList<Integer>();
+    	for(int i = 0; i < Annee.size(); i++){
+    		for(int j = 0; j < Annee.get(i).getEpreuve().size(); j++){
+    			if(Annee.get(i).getEpreuve().get(j).getNomCourse().equals(epreuve) && Annee.get(i).getEpreuve().get(j).Exist()){
+    				res.add(Annee.get(i).getAnnee());
+    			}
+    		}
+    	}
+    	return res;
+    }
+    
+    
+    public String [][] getPaysParticipant(String annee, String epreuve){
+    	ArrayList<String> pays = new ArrayList<String>();
+    	ArrayList<String> nombrePart = new ArrayList<String>();
+    	
+    	int  test= -1;
+    	for( int i =0; i<Annee.size(); i++){
+    		if(Integer.toString(Annee.get(i).getAnnee()).equals(annee)){
+    			for(int j =0; j< Annee.get(i).getEpreuve().size(); j++){
+    				if(Annee.get(i).getEpreuve().get(j).getNomCourse().equals(epreuve)){
+    					for(int k = 0; k< Annee.get(i).getEpreuve().get(j).getParticipants().size();k++){
+    						test = -1;
+    						for(int l = 0; l<pays.size();l++){
+    							if(pays.get(l).equals(Annee.get(i).getEpreuve().get(j).getParticipants().get(k).getNation())){
+    								test = l;
+    							}
+    							
+    						}
+    						if(test != -1){
+    								int nb = Integer.parseInt(nombrePart.get(test));
+    								nombrePart.set(test, ""+nb+1);
+    						}
+    						else{
+    							pays.add(Annee.get(i).getEpreuve().get(j).getParticipants().get(k).getNation());
+    							nombrePart.add(""+1);
+    						}
+    					}
+    				}
+    			}
+    		}
+    	}
+    	String[][] res = new String[pays.size()][2]; 
+    	for(int i = 0; i<pays.size();i++){
+    		res [i][0] = pays.get(i);
+    		res [i][1] = nombrePart.get(i);
     	}
     	return res;
     }

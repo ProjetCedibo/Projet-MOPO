@@ -6,6 +6,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.TreeSet;
 
 import javax.swing.JButton;
@@ -67,13 +68,21 @@ public class PaneRecherche extends JPanel implements ActionListener {
 		if (event.getSource() == bRechercher) actionRecherche();
 	}
 
-	private void actionRecherche() {
-		//textResultat.setText("TOTO");
-		TreeSet<Participants> par = t.recherche(textRecherche.getText());
-		String str = "";
-		for(int i = 0; i< par.size(); i++){
-			str += par.get(i);
-		}
-		textResultat.setText(str);
+	public void actionRecherche() {
+		 String str = textRecherche.getText(); 
+		 TreeSet<Participants> participants = t.recherche(str);
+		 Iterator<Participants> it;
+		 it = participants.iterator();
+		
+		 str = "";
+		 while(it.hasNext()){
+			 Participants par = it.next();
+			 str += par.getNom() + "\n";
+		 }
+		 	System.out.println(str);
+		 //textResultat = new JTextArea("TOTO");
+		 textResultat.setText(str);
+		 str = null;
+		 participants = null;
 	}
 }
