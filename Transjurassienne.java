@@ -122,7 +122,7 @@ public class Transjurassienne{
 		/*for(int i = 0; i< 10; i++){
 				TopDix.add(getAnnee(Integer.parseInt(annee)).getEpreuve(course).Coureurs.get(i+debut));
 		}*/
-		TopDix.addAll(getAnnee(Integer.parseInt(annee)).getEpreuve(course).Coureurs.subList(debut, debut+10));
+		TopDix.addAll(getAnnee(Integer.parseInt(annee)).getEpreuve(course).getParticipants().subList(debut, debut+10));
 		return TopDix;
 	}
 

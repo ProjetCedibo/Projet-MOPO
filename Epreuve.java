@@ -11,7 +11,7 @@ import java.util.Iterator;
  *
  */
 public class Epreuve {
-	ArrayList <Participants> Coureurs;
+	private ArrayList <Participants> Coureurs;
 	private int distance;
 	private String nomCourse;
 	

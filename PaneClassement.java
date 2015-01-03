@@ -20,18 +20,28 @@ public class PaneClassement extends JPanel implements ActionListener {
 	private int indiceClassement = 0;
 	private int indiceMax;
 	private Tableau tableau;
-	private Object[][] donnees = {{"tata","Mehdi"},{"IBO", "test"}, {"petet","ced"}};
+	private Object[][] donnees;
 	private String[] entetes = {"Participant" , "Classement"};
 	
 	public PaneClassement(FenetrePrincipale fp) {
 		super();
-		//donnees = new Object[10][2];
+		initDonnees();
 		this.fen = fp;
 		this.tj = fp.getTransjurassienne();
 		indiceMax = 20;
 		initBouton();
 		setLayout(new BorderLayout());
-		actualiserDonnees();
+		tableau = new Tableau(entetes, donnees);
+		add(tableau, BorderLayout.CENTER);
+		add(paneBouton, BorderLayout.SOUTH);
+	}
+	
+	private void initDonnees(){
+		donnees = new Object[10][2];
+		for(int i =0; i<10;i++){
+			donnees[i][0] = "";
+			donnees[i][1] = "";
+		}
 	}
 	
 	public void actualiserDonnees() {
@@ -41,10 +51,7 @@ public class PaneClassement extends JPanel implements ActionListener {
 			donnees[i][1]=""+(i+1);
 		}
 		*/
-		tableau = new Tableau(entetes, donnees);
-		removeAll();
-		add(tableau, BorderLayout.CENTER);
-		add(paneBouton, BorderLayout.SOUTH);
+
 	}
 	
 	private void initBouton() {

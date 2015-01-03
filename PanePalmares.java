@@ -19,8 +19,11 @@ public class PanePalmares extends JPanel{
 		this.fen = fp;
 		this.tj = fen.getTransjurassienne();
 		initDonnees();
+		tableau = new Tableau(entetes, donnees);
+		paneInfo = new PaneInfo();
 		setLayout(new BorderLayout());
-		actualiserAffichage();
+		add(tableau,BorderLayout.CENTER);
+		add(paneInfo,BorderLayout.SOUTH);
 	}
 	
 	private void initDonnees(){
@@ -32,14 +35,10 @@ public class PanePalmares extends JPanel{
 	}
 	
 	private void actualiserAffichage(){
-		tableau = new Tableau(entetes, donnees);
-		paneInfo = new PaneInfo();
-		removeAll();
-		add(tableau,BorderLayout.CENTER);
-		add(paneInfo,BorderLayout.SOUTH);
+		
 	}
 	
-	private void actualiserDonnees() {
+	public void actualiserDonnees() {
 		ArrayList<String> parNom = tj.getPalmaresNoms(fen.getAnnee());
 		ArrayList<Integer> parAnnee = tj.getPalmaresAnnee(fen.getAnnee());
 		donnees = new Object[parNom.size()][2];
@@ -47,8 +46,9 @@ public class PanePalmares extends JPanel{
 			donnees[i][0] = parNom.get(i);
 			donnees[i][1] = parAnnee.get(i);
 		}
-		actualiserAffichage();
 		
+		paneInfo.actualiserDonnees();
+		actualiserAffichage();
 	}
 	
 	private class PaneInfo extends JPanel {
@@ -58,13 +58,20 @@ public class PanePalmares extends JPanel{
 		
 		public PaneInfo() {
 			super();
-			labelTemps = new JLabel(tj.getAnnee(Integer.parseInt(fen.getAnnee())).getEpreuve(fen.getCourse()).DureeMoyenne());
-			labelNbPart = new JLabel(""+ tj.getAnnee(Integer.parseInt(fen.getAnnee())).getEpreuve(fen.getCourse()).nombreParticipant());
+			//labelTemps = new JLabel(tj.getAnnee(Integer.parseInt(fen.getAnnee())).
+					//getEpreuve(fen.getCourse()).DureeMoyenne());
+			//labelNbPart = new JLabel(""+ tj.getAnnee(Integer.parseInt(fen.getAnnee())).
+					//getEpreuve(fen.getCourse()).nombreParticipant());
+			labelTemps = new JLabel();
+			labelNbPart = new JLabel();
 			setLayout(new GridLayout(1,2));
 			add(labelTemps);
 			add(labelNbPart);
 		}
 		
+		public void actualiserDonnees(){
+			
+		}
 		
 		
 	}

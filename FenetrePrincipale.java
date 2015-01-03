@@ -1,16 +1,11 @@
 
 import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.GridLayout;
 
-import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -25,7 +20,6 @@ public class FenetrePrincipale extends JFrame {
 	private PanePalmares panePalma;
 	private PanePays panePay;
 	private String annee, course;
-	private boolean execute = false;
 	
 
 
@@ -37,9 +31,15 @@ public class FenetrePrincipale extends JFrame {
 	}
 	
 	private void initComposant() {
+		paneClas = new PaneClassement(this);
+		panePalma = new PanePalmares(this);
+		panePay = new PanePays(this);
 		
 		paneTab = new JPanel();
 		paneTab.setLayout(new GridLayout(1, 3));
+		paneTab.add(paneClas);
+		paneTab.add(panePalma);
+		paneTab.add(panePay);
 		
 		paneRecherche = new PaneRecherche(t);
 		
@@ -65,16 +65,8 @@ public class FenetrePrincipale extends JFrame {
 	}
 	
 	public void actualiserDonnee() {
-		if(!execute){
-			execute = true;
-			paneClas = new PaneClassement(this);
-			panePalma = new PanePalmares(this);
-			panePay = new PanePays(this);
-			paneTab.removeAll();
-			paneTab.add(paneClas);
-			paneTab.add(panePalma);
-			paneTab.add(panePay);
-		}
+		panePalma.actualiserDonnees();
+		panePay.actualiserDonnees();
 		paneClas.actualiserDonnees();
 		
 	}

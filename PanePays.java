@@ -14,20 +14,29 @@ public class PanePays extends JPanel{
 		super();
 		this.fen = fp;
 		this.tj = fen.getTransjurassienne();
-		actualiserDonnees();
-		scrollPane = new JScrollPane();
-		scrollPane.add(tableau);
-		add(scrollPane);
+		tableau = new Tableau(entetes, donnees);
+		//scrollPane = new JScrollPane();
+		//scrollPane.add(tableau);
+		add(tableau);
 	}
 	
-	private void actualiserDonnees() {
+	private void initDonnees(){
+		donnees = new Object[10][2];
+		for(int i =0; i<10;i++){
+			donnees[i][0] = "";
+			donnees[i][1] = "";
+		}
+	}
+	
+	public void actualiserDonnees() {
 		String annee = fen.getAnnee();
 		String course = fen.getCourse();
-		tableau = new Tableau(entetes, donnees);
+		
 	}
 	
 	private void actualiserAffichage(){
-		tj.getPaysParticipant(fen.getAnnee(), fen.getCourse());
+		//tj.getPaysParticipant(fen.getAnnee(), fen.getCourse());
+		tableau = new Tableau(entetes, donnees);
 	}
 	
 }

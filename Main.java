@@ -24,7 +24,7 @@ public class Main {
 
 		//System.out.println(tj.getPalmares("76FTF"));
 		FenetrePrincipale fen = new FenetrePrincipale("Transjurassienne");
-		
+		fen.setVisible(true);
 		//System.out.println(tj.recherche("Manon"));
 		
 		//Les fonctions pour l'affichage :
