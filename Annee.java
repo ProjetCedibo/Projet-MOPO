@@ -80,6 +80,7 @@ public void addParticipation(String[] items) {
 		}
 	}
 }
+
 	
 public String toString() {
 	String str = "";	

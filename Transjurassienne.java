@@ -20,13 +20,19 @@ public class Transjurassienne{
 	
 	private TreeSet<Participants> Skieurs;
 	private ArrayList<Annee> Annee;
+<<<<<<< HEAD
     private static Pattern pattern;
 	private static Matcher matcher;
+=======
+	private FenetrePrincipale fen;
+	
+>>>>>>> FETCH_HEAD
 	/**
 	 * Constructeur
 	 * il recherche tous les fichiers .csv dans lesquels sont stockés les informations 
 	 */
-	Transjurassienne(){
+	 public Transjurassienne(FenetrePrincipale fp){
+		this.fen = fp;
 		Skieurs = new TreeSet<Participants>();
 		setAnnee(new ArrayList<Annee>());
 		    File repertoire = new File("./");    
@@ -142,10 +148,19 @@ public class Transjurassienne{
 	public void setAnnee(ArrayList<Annee> annee) {
 		Annee = annee;
 	}
+<<<<<<< HEAD
 	
 	 
 	public TreeSet<Participants> Recherche(String str) {
 		 int cpt=0, cpt2=0, i=0;
+=======
+
+	
+
+
+	 public ArrayList<Participants> recherche(String str) {
+		 int cpt=0, cpt2=0;
+>>>>>>> FETCH_HEAD
 		 ArrayList <Participants> Resultats = new ArrayList<Participants>();
 		 ArrayList <String> prenom = new ArrayList<String>();
 		 TreeSet<Participants> prenom2 = new TreeSet<Participants>();	
@@ -194,8 +209,29 @@ public class Transjurassienne{
 		 		}
 		 	}*/
 		 
+<<<<<<< HEAD
 		return prenom2;
 		}
+=======
+		 return Resultats;
+		 }
+	
+    
+   
+    public ArrayList<String> getPalmares(String epreuve){
+    	ArrayList <String> res = new ArrayList<String>();
+    	for(int i = 0; i < Annee.size(); i++){
+    		for(int j = 0; j < Annee.get(i).getEpreuve().size(); j++){
+    			if(Annee.get(i).getEpreuve().get(j).getNomCourse().equals(epreuve) && Annee.get(i).getEpreuve().get(j).Exist()){
+    				res.add(Annee.get(i).getEpreuve().get(j).getFirst().getNom());
+    			}
+    		}
+    	}
+    	return res;
+    }
+   
+	
+>>>>>>> FETCH_HEAD
 	
 }
 

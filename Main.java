@@ -14,15 +14,24 @@ import java.util.regex.Pattern;
 public class Main {
 
 	public static void main(String[] args) {
-		Transjurassienne tj = new Transjurassienne();
+
 		System.out.println("\nXoxo ! :) ");
+<<<<<<< HEAD
 		System.out.println(tj.Recherche("Benoît"));
+=======
+		//tj.Recherche("Samuel");
+>>>>>>> FETCH_HEAD
 		//System.out.println(tj.getAnnee(2011).getEpreuve("76FTM"));
 		//System.out.println(tj.getAnnee(2011).getEpreuve("76FTF"));
 		//System.out.println(tj.getAnnee(2011).getEpreuve("76FTM").DureeMoyenne());
 		//System.out.println(tj.getAnnee(2011).getEpreuve("76FTM").nombreParticipant());
+<<<<<<< HEAD
 		//fenetre fen = new fenetre(tj);
 		//fen.setVisible(true);
+=======
+		//System.out.println(tj.getPalmares("76FTF"));
+		new FenetrePrincipale("Transjurassienne");
+>>>>>>> FETCH_HEAD
 		
 		
 		
