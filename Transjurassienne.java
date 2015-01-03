@@ -138,14 +138,6 @@ public class Transjurassienne{
 		Annee = annee;
 	}
 
-	
-	 public void getParticipant(String s){
-	        for(Participants p : Skieurs) 
-	        {
-	            if(s.toLowerCase().startsWith(s.toLowerCase()))
-	                System.out.println(p);
-	        }
-	    }
 
 	 public ArrayList<Participants> Recherche(String str) {
 		 int cpt=0, cpt2=0;
@@ -160,13 +152,17 @@ public class Transjurassienne{
 		 	
 		 	
 		 	Participants par = it.next();
-		 	String[] noms=par.getNom().split(" ");
+		 	//String[] noms=par.getNom().split(" ");
 		 	
 		 	for(int i = 0 ; i< str.length(); i++){
-		 		if(par.getNom().charAt(i) == str.charAt(i) && (cpt<str.length())){
-		 			cpt++;
-		 			
+		 		if(par.getNom().charAt(i) == ' '){
+		 			cpt = 0;
 		 		}
+		 		
+		 		if(par.getNom().charAt(i) == str.charAt(cpt2) && (cpt<str.length())){
+		 			cpt++;
+		 		}
+		 		cpt2++;
 		 	}
 		 
 		 		if (cpt == str.length()){
