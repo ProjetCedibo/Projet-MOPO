@@ -1,6 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
-import java.util.TreeSet;
 
 /**
  * Classe permettant le stockage des informations d'une épreuve
@@ -32,8 +32,15 @@ public class Epreuve {
 	 * @param items C'est un tableau qui contient toutes les informations pour ajouter une participation
 	 */
 	public void addParticipants(String items []){
-		Coureurs.add(new Participants(items, 1));
+		Coureurs.add(new Participants(items,1));
+		Collections.sort(Coureurs);
 	}
+	
+	
+	  public Participants getFirst(){
+	    Collections.sort(Coureurs);
+	    return Coureurs.get(0);
+	  }
 	
 
 	/**

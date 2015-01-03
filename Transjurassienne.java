@@ -138,6 +138,8 @@ public class Transjurassienne{
 		Annee = annee;
 	}
 
+	
+
 
 	 public ArrayList<Participants> Recherche(String str) {
 		 int cpt=0, cpt2=0;
@@ -179,7 +181,17 @@ public class Transjurassienne{
 	Et on évalue des blocs de 5 caractères qui valent "Manon"*/
     
    
-    	
+    public ArrayList<Participants> getPalmares(String epreuve){
+    	ArrayList <Participants> res = new ArrayList<Participants>();
+    	for(int i = 0; i < Annee.size(); i++){
+    		for(int j = 0; j < Annee.get(i).getEpreuve().size(); j++){
+    			if(Annee.get(i).getEpreuve().get(j).getNomCourse().equals(epreuve) && Annee.get(i).getEpreuve().get(j).Exist()){
+    				res.add(Annee.get(i).getEpreuve().get(j).getFirst());
+    			}
+    		}
+    	}
+    	return res;
+    }
    
 	
 	

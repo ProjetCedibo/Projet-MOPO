@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Class permettant de stocker les informations d'un participant à la transjurassienne
@@ -88,15 +89,6 @@ public class Participants implements Comparable<Participants>{
 		return club;
 	}
 	
-
-	public int compareTo(Participants p) {
-		if ((((this.nom.equalsIgnoreCase(p.getNom())) && (this.naissance==p.getNaissance()) && (this.club.equalsIgnoreCase(p.getClub())) && (this.nation.equalsIgnoreCase(p.getNation()))))){
-			return 0;	
-		}
-		else {
-			return 1;
-		}
-	}
 	
 	public String toString() {
 		String str = "\n";	
@@ -121,6 +113,21 @@ public class Participants implements Comparable<Participants>{
 			}
 		}
 		return 0;
+	}
+
+
+
+	public int compareTo(Participants o) {
+		if(Participe.get(0).getClassement() > o.getParticipe().get(0).getClassement()){
+			return 1;
+		}else{
+			return -1;
+		}
+	}
+
+
+	private ArrayList<Participation> getParticipe() {
+		return Participe;
 	}	
 }
 
