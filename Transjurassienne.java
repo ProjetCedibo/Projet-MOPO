@@ -2,17 +2,17 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.SortedSet;
+import java.util.Iterator;
 import java.util.TreeSet;
 
 /**
- * Class permettant de stocker les informations sur la transjurassienne
+ * Classe permettant de stocker les informations sur la transjurassienne
  * 
  * @author Ibrahim Akrach
  * @author Cedric Petetin
  *
  */
-public class Transjurassienne {
+public class Transjurassienne{
 	
 	private TreeSet<Participants> Skieurs;
 	private ArrayList<Annee> Annee;
@@ -147,8 +147,54 @@ public class Transjurassienne {
 	        }
 	    }
 
+	 
+	 
 	
 
+	public ArrayList<Participants> Recherche(String str) {
+		int cpt=0; 
+		
+		ArrayList <Participants> Resultats = new ArrayList<Participants>();
+		
+		Iterator<Participants> it;
+	    
+		it = Skieurs.iterator();
+	    
+		System.out.println("Avant le while"); 
+	    
+		while (it.hasNext()){
+	    	System.out.println("Après le while"); 
+	    	cpt=0;
+	    	System.out.println(cpt); 
+			Participants par = it.next();	
+			
+			for(int i = 0 ; i< par.getNom().length();i++){
+					System.out.println("Dans le for"); 
+					
+					if(par.getNom().charAt(i)==str.charAt(cpt)){
+						System.out.println("Dans le if1"); 
+						cpt++;
+						System.out.println(cpt); 
+					}	 	
+			}
+			
+			if (cpt == str.length()){
+			 	System.out.println("Dans le if2"); 
+			 	System.out.println(par);
+			 	Resultats.add(par);
+			 	}	 
+	    }
+		return Resultats;
+	}
+	
+	/*Manon = 5 caractères
+	On compte le nombre de caractères
+	Et on évalue des blocs de 5 caractères qui valent "Manon"*/
+    
+   
+    	
+   
+	
 	
 
 }

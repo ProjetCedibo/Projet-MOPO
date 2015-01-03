@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 
 /**
- * Class permettant de stocker les épreuves qui ont eu lieues durant l'année
+ * Classe permettant de stocker les épreuves qui ont eu lieues durant l'année
  * 
  * @author Ibrahim Akrach
  * @author Cedric Petetin
