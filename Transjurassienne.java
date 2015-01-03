@@ -147,70 +147,36 @@ public class Transjurassienne{
 	        }
 	    }
 
-	 
-	 
-	
-
-	public ArrayList<Participants> Recherche(String str) {
-<<<<<<< HEAD
-		int cpt=0, cpt2=0; 
-		String[] noms;
-		String tmp;
-=======
-		int cpt=0; 
-		
->>>>>>> parent of be7dbb1... BLANC
-		ArrayList <Participants> Resultats = new ArrayList<Participants>();
-		
-		Iterator<Participants> it;
-	    
-		it = Skieurs.iterator();
-	    
-		System.out.println("Avant le while"); 
-	    
-		while (it.hasNext()){
-<<<<<<< HEAD
-			
-			
-	    	cpt=0; 
-	    	cpt2=0;
-	    	 
-			Participants par = it.next();	
-			tmp = par.getNom();
-			noms=tmp.split(" ");
-			//System.out.println("Partie1 :"+noms[1] );
-			
-			for(int i=0;i< str.length(); i++){
-					if(noms[0].charAt(i) == str.charAt(i) && (cpt<str.length())){ 
-=======
-	    	System.out.println("Après le while"); 
-	    	cpt=0;
-	    	System.out.println(cpt); 
-			Participants par = it.next();	
-			
-			for(int i = 0 ; i< par.getNom().length();i++){
-					System.out.println("Dans le for"); 
-					
-					if(par.getNom().charAt(i)==str.charAt(cpt)){
-						System.out.println("Dans le if1"); 
->>>>>>> parent of be7dbb1... BLANC
-						cpt++;
-					}	 	
-			
-					if(noms[1].charAt(i) == str.charAt(i) && (cpt2<str.length())){ 
-						cpt2++;
-					}
-			}
-			
-			if (cpt == str.length()||cpt2==str.length()){
-			 	System.out.println(par.getNom());
-			 	Resultats.add(par);
-			 }	 
-			noms=null;
-		
-		}
-		return Resultats;
-	}
+	 public ArrayList<Participants> Recherche(String str) {
+		 int cpt=0, cpt2=0;
+		 ArrayList <Participants> Resultats = new ArrayList<Participants>();
+		 
+		 Iterator<Participants> it;
+		 it = Skieurs.iterator();
+		 
+		 while (it.hasNext()){
+		 	cpt=0;
+		 	cpt2=0;
+		 	
+		 	
+		 	Participants par = it.next();
+		 	String[] noms=par.getNom().split(" ");
+		 	
+		 	for(int i = 0 ; i< str.length(); i++){
+		 		if(par.getNom().charAt(i) == str.charAt(i) && (cpt<str.length())){
+		 			cpt++;
+		 			
+		 		}
+		 	}
+		 
+		 		if (cpt == str.length()){
+		 			System.out.println(par.getNom());
+		 			Resultats.add(par);
+		 		}
+		 	}
+		 
+		 return Resultats;
+		 }
 	
 	/*Manon = 5 caractères
 	On compte le nombre de caractères
