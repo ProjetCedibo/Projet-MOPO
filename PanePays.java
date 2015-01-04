@@ -2,8 +2,10 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Image;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
@@ -54,12 +56,20 @@ public class PanePays extends JPanel{
 	
 	
 	public void actualiserDonnees() {
+		JPanel pane = new JPanel();
+		pane.setBackground(Color.BLUE);
 		String annee = fen.getAnnee();
 		String epreuve = fen.getCourse();
 		String[][] pays = tj.getPaysParticipant(annee, epreuve);
 		donnees = new Object[pays.length][2];
+		Image img = null;
+		try{
+			img =  ImageIO.read(new File("a.gif"));
+		}
+		catch(IOException e){}
 		for(int i = 0; i<donnees.length;i++){
-			donnees[i][0] = pays[i][0];
+			donnees[i][0] = pane;
+			//donnees[i][0] = pays[i][0];
 			donnees[i][1] = pays[i][1];
 		}
 		tableau.setDonnee(donnees);

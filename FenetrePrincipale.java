@@ -1,7 +1,12 @@
 
 import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.GridLayout;
+import java.awt.Image;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -10,6 +15,7 @@ import javax.swing.JPanel;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
+import java.io.IOException;
 
 public class FenetrePrincipale extends JFrame {
 	
@@ -60,13 +66,14 @@ public class FenetrePrincipale extends JFrame {
 		panePrincipal.setLayout(new GridLayout(2, 1));
 		panePrincipal.add(paneTab);
 		panePrincipal.add(paneRens);
-		
-		barreMenu = new BarreMenu(this);
+		barreMenu= new BarreMenu(this);
 		
 		getContentPane().setLayout(new BorderLayout());
 		getContentPane().add(panePrincipal, BorderLayout.CENTER);
 		getContentPane().add(barreMenu, BorderLayout.NORTH);
+		
 	}
+	
 	
 	private void initFenetre() {
 		setIconImage(new ImageIcon(this.getClass().getResource(File.separator+"logo.png")).getImage());
