@@ -36,14 +36,12 @@ public class Tableau extends JPanel {
 		else if (donnees.length < newDonnees.length)
 			ajouterLignes(newDonnees.length - donnees.length);
 		donnees = newDonnees;
-		int lon =  ((String) donnees[0][0]).length();
-		for (int i = 0 ; i < donnees[i].length ; i++) {
-			for(int j = 0; j < lon ; j++){
-				tableau.setValueAt(donnees[i][j], i, j);
-				//tableau.setValueAt(donnees[i][1], i, 1);
-			}
+		for (int i = 0 ; i < donnees.length ; i++) {
+			tableau.setValueAt(donnees[i][0], i, 0);
+			tableau.setValueAt(donnees[i][1], i, 1);
 		}
 	}
+	
 
 	private void ajouterLignes(int nbLigne) {
 		Object[] tmp = new Object[nbLigne];

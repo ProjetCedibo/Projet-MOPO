@@ -23,14 +23,12 @@ public class PaneRecherche extends JPanel implements ActionListener {
 	
 	private Titre titre;
 	private JButton bRechercher;
-	//private JTextArea textResultat;
+	private JTextArea textResultat;
 	private JTextField textRecherche;
 	private JPanel commande;
 	private Transjurassienne t;
 	private JScrollPane scrollPane;
-	private Tableau tableau;
-	private Object[][] donnees = {{"", ""/*, "", "", "", "", "","", ""*/}};
-	private String[] entetes = {"Nom", "Naissance", "Club", "Annee:Epreuve", "Arrivee", "Classement", "Dossars","Categorie", /*"Classement categorie"*/};
+
 	
 	public PaneRecherche(Transjurassienne tj) {
 		super();
@@ -45,7 +43,7 @@ public class PaneRecherche extends JPanel implements ActionListener {
 	
 	private void initComposant() {
 		titre = new Titre("Entrez un nom ou un prenom :");
-		tableau = new Tableau(entetes, donnees);
+
 		
 		bRechercher = new JButton("Rechercher");
 		bRechercher.addActionListener(this);
@@ -53,12 +51,12 @@ public class PaneRecherche extends JPanel implements ActionListener {
 		
 		textRecherche = new JTextField();
 		
-		/*textResultat = new JTextArea();
+		textResultat = new JTextArea();
 		textResultat.setEditable(true);
 		textResultat.setBackground(new Color(200,255,200));
 		
 		scrollPane = new JScrollPane();
-		scrollPane.getViewport().add(textResultat);*/
+		scrollPane.getViewport().add(textResultat);
 		
 		commande = new JPanel();
 		commande.setLayout(new GridLayout(1, 3));
@@ -66,8 +64,7 @@ public class PaneRecherche extends JPanel implements ActionListener {
 		commande.add(textRecherche);
 		commande.add(bRechercher);
 		commande.setBackground(new Color(230,255,230));
-		scrollPane = new JScrollPane();
-		scrollPane.getViewport().add(tableau);
+
 	}
 	
 	@Override
@@ -77,30 +74,29 @@ public class PaneRecherche extends JPanel implements ActionListener {
 	
 	
 	public void actionRecherche() {
-		 String str = textRecherche.getText(); 
+		 String str = textRecherche.getText();
 		 TreeSet<Participants> participants = t.recherche(str);
 		 Iterator<Participants> it;
 		 it = participants.iterator();
 		 int i = 0;
 		 str = "";
-		 donnees = new Object[participants.size()][8];
+		 String affiche = "";
 		 
 		 while(it.hasNext()){
 			 Participants par = it.next();
-			 donnees[i][0] = par.getNom();
+			 /*donnees[i][0] = par.getNom();
 			 donnees[i][1] = par.getNaissance();
 			 donnees[i][2] = par.getClub();
 			 donnees[i][3] = par.getParticipe().get(0).getannee()+" : "+ par.getParticipe().get(0).getEpreuve();
 			 donnees[i][4] = par.getParticipe().get(0).getArrivee();
 			 donnees[i][5] = par.getParticipe().get(0).getClassement();
 			 donnees[i][6] = par.getParticipe().get(0).getDossard();
-			 donnees[i][7] = par.getParticipe().get(0).getCategorie();
+			 donnees[i][7] = par.getParticipe().get(0).getCategorie();*/
 			 
-			 i++;
+			 affiche += par.getParticipe().get(0).getannee()+ " : " +par.getNom()+" a participé à la course "+par.getParticipe().get(0).getEpreuve() + ". Son classement final fut : "+par.getParticipe().get(0).getClassement()+".\n"; 
 			 
 		 }
-		 tableau.setDonnee(donnees);
-
+		 textResultat.setText(affiche);
 		 str = null;
 		 participants = null;
 	}

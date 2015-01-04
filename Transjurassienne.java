@@ -139,10 +139,8 @@ public class Transjurassienne{
 	
 
 	public TreeSet<Participants> recherche(String str) {
-		int i=0;
-		ArrayList <String> prenom = new ArrayList<String>();
-		TreeSet<Participants> prenom2 = new TreeSet<Participants>();
 		
+		TreeSet<Participants> prenom2 = new TreeSet<Participants>();
 		Iterator<Participants> it;
 		it = Skieurs.iterator();
 		
@@ -155,11 +153,9 @@ public class Transjurassienne{
 			while(matcher.find()) {
 				prenom2.add(par);
 				
-				/*for (i=0;i<prenom.size();i++){
-					//System.out.println(prenom.get(i));
-				}*/
 			}
 		}
+		
 		return prenom2;
 		}
 
