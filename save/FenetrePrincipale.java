@@ -1,37 +1,32 @@
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.io.File;
 
 public class FenetrePrincipale extends JFrame {
 	
 	private JPanel panePrincipal;
-	private JPanel paneRens;
 	private JPanel paneTab;
-	
 	private PaneRecherche paneRecherche;
-	private PaneInfo paneInfo;
+	private BarreMenu barreMenu;
+	private Transjurassienne t;
 	private PaneClassement paneClas;
 	private PanePalmares panePalma;
 	private PanePays panePay;
-	
-	private BarreMenu barreMenu;
-	
-	private Transjurassienne t;
-	
 	private String annee, course;
+	
+
 
 	public FenetrePrincipale(String titre) {
 		super(titre);
-		this.t = new Transjurassienne(this);;
+		this.t = new Transjurassienne();
 		initComposant();
 		initFenetre();
 	}
@@ -41,48 +36,39 @@ public class FenetrePrincipale extends JFrame {
 		panePalma = new PanePalmares(this);
 		panePay = new PanePays(this);
 		
-		
 		paneTab = new JPanel();
 		paneTab.setLayout(new GridLayout(1, 3));
 		paneTab.add(paneClas);
 		paneTab.add(panePalma);
 		paneTab.add(panePay);
 		
-		paneInfo = new PaneInfo(this);
 		paneRecherche = new PaneRecherche(t);
-		
-		paneRens = new JPanel();
-		paneRens.setLayout(new BorderLayout());
-		paneRens.add(paneInfo, BorderLayout.NORTH);
-		paneRens.add(paneRecherche, BorderLayout.CENTER);
 		
 		panePrincipal = new JPanel();
 		panePrincipal.setLayout(new GridLayout(2, 1));
 		panePrincipal.add(paneTab);
-		panePrincipal.add(paneRens);
+		panePrincipal.add(paneRecherche);
 		
 		barreMenu = new BarreMenu(this);
 		
 		getContentPane().setLayout(new BorderLayout());
-		getContentPane().add(panePrincipal, BorderLayout.CENTER);
 		getContentPane().add(barreMenu, BorderLayout.NORTH);
+		getContentPane().add(panePrincipal, BorderLayout.CENTER);
 	}
 	
 	private void initFenetre() {
-		setIconImage(new ImageIcon(this.getClass().getResource(File.separator+"logo.png")).getImage());
-		setLocation(100,100);
+		setLocationRelativeTo(null);
 		addWindowListener(new Fermeture());
-		setSize(1000,600);
+		setPreferredSize(new Dimension(700,600));
 		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 		setResizable(false);
-		setVisible(true);
+		pack();
 	}
 	
 	public void actualiserDonnee() {
 		panePalma.actualiserDonnees();
 		panePay.actualiserDonnees();
-		paneClas.actualiserDonnees(true);
-		paneInfo.actualiserDonnees();
+		paneClas.actualiserDonnees();
 		
 	}
 	

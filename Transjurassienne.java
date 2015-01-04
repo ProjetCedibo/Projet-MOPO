@@ -28,8 +28,8 @@ public class Transjurassienne{
 	 * Constructeur
 	 * il recherche tous les fichiers .csv dans lesquels sont stockés les informations 
 	 */
-	 public Transjurassienne(FenetrePrincipale fp){
-		this.fen = fp;
+	 public Transjurassienne(FenetrePrincipale fen){
+		 this.fen = fen;
 		Skieurs = new TreeSet<Participants>();
 		setAnnee(new ArrayList<Annee>());
 		    File repertoire = new File("./");    
@@ -117,13 +117,14 @@ public class Transjurassienne{
 	}
 
 	
-	public ArrayList<Participants> affiche10(String annee, String course, int debut){
-		ArrayList<Participants> TopDix = new ArrayList<Participants>(10);
-		/*for(int i = 0; i< 10; i++){
+	public ArrayList<Participants> getParticip(String annee, String course){
+		/*ArrayList<Participants> TopDix = new ArrayList<Participants>(10);
+		for(int i = 0; i< 10; i++){
 				TopDix.add(getAnnee(Integer.parseInt(annee)).getEpreuve(course).Coureurs.get(i+debut));
-		}*/
-		TopDix.addAll(getAnnee(Integer.parseInt(annee)).getEpreuve(course).getParticipants().subList(debut, debut+10));
-		return TopDix;
+		}
+		TopDix.addAll(getAnnee(Integer.parseInt(annee)).getEpreuve(course).getParticipants().subList(debut, debut+10));*/
+		
+		return getAnnee(Integer.parseInt(annee)).getEpreuve(course).getParticipants();
 	}
 
 	/**
@@ -171,6 +172,7 @@ public class Transjurassienne{
     		for(int j = 0; j < Annee.get(i).getEpreuve().size(); j++){
     			if(Annee.get(i).getEpreuve().get(j).getNomCourse().equals(epreuve) && Annee.get(i).getEpreuve().get(j).Exist()){
     				res.add(Annee.get(i).getEpreuve().get(j).getFirst().getNom());
+    				//System.out.println("TOTO");
     			}
     		}
     	}
@@ -192,7 +194,7 @@ public class Transjurassienne{
     
     public String [][] getPaysParticipant(String annee, String epreuve){
     	ArrayList<String> pays = new ArrayList<String>();
-    	ArrayList<String> nombrePart = new ArrayList<String>();
+    	ArrayList<Integer> nombrePart = new ArrayList<Integer>();
     	
     	int  test= -1;
     	for( int i =0; i<Annee.size(); i++){
@@ -204,16 +206,18 @@ public class Transjurassienne{
     						for(int l = 0; l<pays.size();l++){
     							if(pays.get(l).equals(Annee.get(i).getEpreuve().get(j).getParticipants().get(k).getNation())){
     								test = l;
+
     							}
     							
     						}
     						if(test != -1){
-    								int nb = Integer.parseInt(nombrePart.get(test));
-    								nombrePart.set(test, ""+nb+1);
+    								int nb = nombrePart.get(test);
+    								//int nb2 = Integer.parseInt(nb);
+    								nombrePart.set(test, nb+1);
     						}
     						else{
     							pays.add(Annee.get(i).getEpreuve().get(j).getParticipants().get(k).getNation());
-    							nombrePart.add(""+1);
+    							nombrePart.add(1);
     						}
     					}
     				}
@@ -223,11 +227,18 @@ public class Transjurassienne{
     	String[][] res = new String[pays.size()][2]; 
     	for(int i = 0; i<pays.size();i++){
     		res [i][0] = pays.get(i);
-    		res [i][1] = nombrePart.get(i);
+    		res [i][1] = Integer.toString(nombrePart.get(i));
     	}
     	return res;
     }
-	
+
+    public String lienDrapeau(String nation){
+		String str = "";
+		nation = nation.toLowerCase();
+		str = "/drapeaux/"+nation+".gif";
+		return str;
+	}
+    
 }
 
 

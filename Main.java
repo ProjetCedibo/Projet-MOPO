@@ -21,12 +21,15 @@ public class Main {
 		//System.out.println(tj.getAnnee(2011).getEpreuve("76FTF"));
 		//System.out.println(tj.getAnnee(2011).getEpreuve("76FTM").DureeMoyenne());
 		//System.out.println(tj.getAnnee(2011).getEpreuve("76FTM").nombreParticipant());
-
-		//System.out.println(tj.getPalmares("76FTF"));
-		FenetrePrincipale fen = new FenetrePrincipale("Transjurassienne");
-		fen.setVisible(true);
-		//System.out.println(tj.recherche("Manon"));
 		
+		FenetrePrincipale fen = new FenetrePrincipale("Transjurassienne");
+		//System.out.println(tj.recherche("Manon"));
+		/*Transjurassienne tj =new Transjurassienne(fen);
+		String[][] res = tj.getPaysParticipant("2014", "76FTM");
+		for(int i = 0; i<res.length; i++){
+			System.out.println(res[i][0] +" - "+ res[i][1]+"   -   " + lienDrapeau(res[i][0]));
+		}*/
+		//ArrayList<String> co =  tj.getPalmaresNoms("25CTF");
 		//Les fonctions pour l'affichage :
 		// les 10 participant d'une course dans Transjurassienne: 
 		//affiche10(String annee, String course, int debut) 
@@ -37,5 +40,9 @@ public class Main {
 		// Récupérer le palmares : 
 		//tj.getPalmares(String epreuve)
 		
+		
+		
 	}
+	
+	
 }		

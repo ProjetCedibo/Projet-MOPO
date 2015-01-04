@@ -39,6 +39,7 @@ public class Epreuve {
 	
 	  public Participants getFirst(){
 	    Collections.sort(Coureurs);
+	    //System.out.println(Coureurs.get(0));
 	    return Coureurs.get(0);
 	  }
 	

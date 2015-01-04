@@ -1,19 +1,21 @@
+
+
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
 public class PaneClassement extends JPanel implements ActionListener {
 
-	
-	private FenetrePrincipale fen;
+	private JPanel paneBouton;
+	private JButton bPrecedent;
+	private JButton bSuivant;
 	private Transjurassienne tj;
+	private FenetrePrincipale fen;
 	
 	private int indiceClassement = 0;
 	private int indiceMax;
@@ -21,22 +23,15 @@ public class PaneClassement extends JPanel implements ActionListener {
 	private Object[][] donnees;
 	private String[] entetes = {"Participant" , "Classement"};
 	
-	private JPanel paneBouton;
-	private JButton bPrecedent;
-	private JButton bSuivant;
-	private Titre titre;
-	
 	public PaneClassement(FenetrePrincipale fp) {
 		super();
+		initDonnees();
 		this.fen = fp;
 		this.tj = fp.getTransjurassienne();
-		
-		initDonnees();
-		initComposants();
-		
-		setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.BLACK));
+		indiceMax = 20;
+		initBouton();
 		setLayout(new BorderLayout());
-		add(titre, BorderLayout.NORTH);
+		tableau = new Tableau(entetes, donnees);
 		add(tableau, BorderLayout.CENTER);
 		add(paneBouton, BorderLayout.SOUTH);
 	}
@@ -47,33 +42,19 @@ public class PaneClassement extends JPanel implements ActionListener {
 			donnees[i][0] = "";
 			donnees[i][1] = "";
 		}
-		indiceMax = 0;
 	}
 	
-	public void actualiserDonnees(boolean indiceAZero) {
-		if(indiceAZero) indiceClassement = 0;
-		ArrayList<Participants> par = tj.getParticip(fen.getAnnee(), fen.getCourse());
-		for(int i = 0; i<10;i++){
-			if(i+indiceClassement<par.size()){
-				donnees[i][0]=par.get(i+indiceClassement).getNom();
-				donnees[i][1]=par.get(i+indiceClassement).getParticipe().get(0).getClassement();
-			}else{
-				donnees[i][0] = "";
-				donnees[i][1] = "";
-			}
+	public void actualiserDonnees() {
+		ArrayList<Participants> par = tj.affiche10(fen.getAnnee(), fen.getCourse(), indiceClassement);
+		/*for(int i = 0; i<10;i++){
+			donnees[i][0]=par.get(i).getNom();
+			donnees[i][1]=""+(i+1);
 		}
-		
-		int aux = par.size() - 10;
-		if (aux / 10 * 10 != aux) indiceMax = aux + 10;
-		else indiceMax = aux;
-		tableau.setDonnee(donnees);
+		*/
+
 	}
 	
-	private void initComposants() {
-		titre = new Titre("Classement");
-		
-		tableau = new Tableau(entetes, donnees);
-		
+	private void initBouton() {
 		bPrecedent = new JButton("Precedent");
 		bSuivant = new JButton("Suivant");
 		
@@ -97,12 +78,12 @@ public class PaneClassement extends JPanel implements ActionListener {
 	private void actionPrecedent() {
 		indiceClassement -= 10;
 		if (indiceClassement < 0) indiceClassement = 0;
-		actualiserDonnees(false);
+		actualiserDonnees();
 	}
 	
 	private void actionSuivant() {
 		indiceClassement += 10;
-		if (indiceClassement > indiceMax) indiceClassement -=10;
-		actualiserDonnees(false);
+		if (indiceClassement > indiceMax) indiceClassement = indiceMax;
+		actualiserDonnees();
 	}
 }
