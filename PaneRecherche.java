@@ -30,7 +30,7 @@ public class PaneRecherche extends JPanel implements ActionListener {
 	private JScrollPane scrollPane;
 	private Tableau tableau;
 	private Object[][] donnees = {{"", ""/*, "", "", "", "", "","", ""*/}};
-	private String[] entetes = {"Nom", "Naissance", "Club", "Annee:Epreuve", /*"Arrivee", "Classement", "Dossars","Categorie", "Classement categorie"*/};
+	private String[] entetes = {"Nom", "Naissance", "Club", "Annee:Epreuve", "Arrivee", "Classement", "Dossars","Categorie", /*"Classement categorie"*/};
 	
 	public PaneRecherche(Transjurassienne tj) {
 		super();
@@ -83,7 +83,7 @@ public class PaneRecherche extends JPanel implements ActionListener {
 		 it = participants.iterator();
 		 int i = 0;
 		 str = "";
-		 donnees = new Object[participants.size()][4];
+		 donnees = new Object[participants.size()][8];
 		 
 		 while(it.hasNext()){
 			 Participants par = it.next();
@@ -91,7 +91,11 @@ public class PaneRecherche extends JPanel implements ActionListener {
 			 donnees[i][1] = par.getNaissance();
 			 donnees[i][2] = par.getClub();
 			 donnees[i][3] = par.getParticipe().get(0).getannee()+" : "+ par.getParticipe().get(0).getEpreuve();
-			 str += par.getNom() +"a participé en "+ par.getParticipe().get(0).getannee() +" à l'épreuve :"+ par.getParticipe().get(0).getEpreuve() +". Il/Elle a fini en "+par.getParticipe().get(0).getClassement()+" position.\n";
+			 donnees[i][4] = par.getParticipe().get(0).getArrivee();
+			 donnees[i][5] = par.getParticipe().get(0).getClassement();
+			 donnees[i][6] = par.getParticipe().get(0).getDossard();
+			 donnees[i][7] = par.getParticipe().get(0).getCategorie();
+			 
 			 i++;
 			 
 		 }
