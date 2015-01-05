@@ -1,26 +1,24 @@
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JMenu;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.BoxLayout;
-import javax.swing.JMenuBar;
-
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.JRadioButtonMenuItem;
+/**
+ * Class BarreMenu
+ * Affiche le menu et permet de selectionner des epreuves et des année
+ * 
+ * @author Ibrahim Akrach
+ * @author Cedric Petetin
+ *
+ */
 
-
+@SuppressWarnings("serial")
 public class BarreMenu extends JMenuBar implements MouseListener{
 
-	private JPanel contentPane;
 	private ArrayList<MenuTop> menu;
 	private ArrayList<JMenu> jmenu; 
 	private Transjurassienne t;

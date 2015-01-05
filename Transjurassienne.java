@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
-import java.io.*;
-import java.util.regex.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 /**
@@ -16,20 +16,24 @@ import java.util.regex.*;
  * @author Cedric Petetin
  *
  */
+/**
+ * @author cedric
+ *
+ */
 public class Transjurassienne{
 	
 	private Set<Participants> Skieurs;
 	private ArrayList<Annee> Annee;
     private static Pattern pattern;
 	private static Matcher matcher;
-	private FenetrePrincipale fen;
+
 	
 	/**
 	 * Constructeur
 	 * il recherche tous les fichiers .csv dans lesquels sont stockés les informations 
 	 */
-	 public Transjurassienne(FenetrePrincipale fen){
-		 this.fen = fen;
+	 public Transjurassienne(){
+
 		Skieurs = new TreeSet<Participants>();
 		setAnnee(new ArrayList<Annee>());
 		    File repertoire = new File("./");    
@@ -118,12 +122,6 @@ public class Transjurassienne{
 
 	
 	public ArrayList<Participants> getParticip(String annee, String course){
-		/*ArrayList<Participants> TopDix = new ArrayList<Participants>(10);
-		for(int i = 0; i< 10; i++){
-				TopDix.add(getAnnee(Integer.parseInt(annee)).getEpreuve(course).Coureurs.get(i+debut));
-		}
-		TopDix.addAll(getAnnee(Integer.parseInt(annee)).getEpreuve(course).getParticipants().subList(debut, debut+10));*/
-		
 		return getAnnee(Integer.parseInt(annee)).getEpreuve(course).getParticipants();
 	}
 
@@ -138,6 +136,11 @@ public class Transjurassienne{
 
 	
 
+	/**
+	 * Fonction permettant la recherche de participants
+	 * @param str le nom a chercher
+	 * @return la liste des participants correspondants a la recherche
+	 */
 	public TreeSet<Participants> recherche(String str) {
 		
 		TreeSet<Participants> prenom2 = new TreeSet<Participants>();
@@ -162,19 +165,29 @@ public class Transjurassienne{
 
     
    
+    /**
+     * Fonction recherchant le nom des vainqueurs d'une epreuve, une année sur l'autre
+     * @param epreuve l'epreuve dont on veut connaitre les gagnants
+     * @return la liste des gagnant de l'epreuve
+     */
     public ArrayList<String> getPalmaresNoms(String epreuve){
     	ArrayList <String> res = new ArrayList<String>();
     	for(int i = 0; i < Annee.size(); i++){
     		for(int j = 0; j < Annee.get(i).getEpreuve().size(); j++){
     			if(Annee.get(i).getEpreuve().get(j).getNomCourse().equals(epreuve) && Annee.get(i).getEpreuve().get(j).Exist()){
     				res.add(Annee.get(i).getEpreuve().get(j).getFirst().getNom());
-    				//System.out.println("TOTO");
     			}
     		}
     	}
     	return res;
     }
     
+    
+    /**
+     * Fonction pertmettant de connaitre l'année de victoire 
+     * @param epreuve l'epreuve dont on veut connaitre les gagnants
+     * @return la liste des annees durant lesquelles l'epreuve a eu lieu
+     */
     public ArrayList<Integer> getPalmaresAnnee(String epreuve){
     	ArrayList <Integer> res = new ArrayList<Integer>();
     	for(int i = 0; i < Annee.size(); i++){
@@ -188,6 +201,12 @@ public class Transjurassienne{
     }
     
     
+    /**
+     * Fonction qui retourne le pays ainsi que le nombre de participants de cette nationnalitée qui on participés a une course
+     * @param annee l'annee de l'epreuve
+     * @param epreuve l'epreuve
+     * @return un tableau contenant la notionnalitée et le nombre de participants de cette nationnalitée
+     */
     public String [][] getPaysParticipant(String annee, String epreuve){
     	ArrayList<String> pays = new ArrayList<String>();
     	ArrayList<Integer> nombrePart = new ArrayList<Integer>();
@@ -228,13 +247,6 @@ public class Transjurassienne{
     	return res;
     }
 
-    public String lienDrapeau(String nation){
-		String str = "";
-		nation = nation.toLowerCase();
-		str = "/drapeaux/"+nation+".gif";
-		return str;
-	}
-    
 }
 
 

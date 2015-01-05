@@ -1,3 +1,4 @@
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.util.ArrayList;
@@ -6,6 +7,15 @@ import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
+/**
+ * Class PanePalmares
+ * Affiche le tableau du palmares de l'epreuve 
+ * 
+ * @author Ibrahim Akrach
+ * @author Cedric Petetin
+ *
+ */
+@SuppressWarnings("serial")
 public class PanePalmares extends JPanel{
 
 	private FenetrePrincipale fen;

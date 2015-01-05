@@ -6,6 +6,15 @@ import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+/**
+ * Class PaneInfo
+ * affiche les statistiques ("heure" et "nombre participant")
+ * 
+ * @author Ibrahim Akrach
+ * @author Cedric Petetin
+ *
+ */
+@SuppressWarnings("serial")
 public class PaneInfo extends JPanel {
 	
 		private FenetrePrincipale fen;

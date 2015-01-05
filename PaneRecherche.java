@@ -5,20 +5,26 @@ import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.TreeSet;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import javax.swing.border.BevelBorder;
 
+/**
+ * Class PaneRecherche
+ * affiche le champs de recherche, le bouton et les resultats de la recherche
+ * 
+ * @author Ibrahim Akrach
+ * @author Cedric Petetin
+ *
+ */
+
+@SuppressWarnings("serial")
 public class PaneRecherche extends JPanel implements ActionListener {
 	
 	private Titre titre;
@@ -78,20 +84,11 @@ public class PaneRecherche extends JPanel implements ActionListener {
 		 TreeSet<Participants> participants = t.recherche(str);
 		 Iterator<Participants> it;
 		 it = participants.iterator();
-		 int i = 0;
 		 str = "";
 		 String affiche = "";
 		 
 		 while(it.hasNext()){
 			 Participants par = it.next();
-			 /*donnees[i][0] = par.getNom();
-			 donnees[i][1] = par.getNaissance();
-			 donnees[i][2] = par.getClub();
-			 donnees[i][3] = par.getParticipe().get(0).getannee()+" : "+ par.getParticipe().get(0).getEpreuve();
-			 donnees[i][4] = par.getParticipe().get(0).getArrivee();
-			 donnees[i][5] = par.getParticipe().get(0).getClassement();
-			 donnees[i][6] = par.getParticipe().get(0).getDossard();
-			 donnees[i][7] = par.getParticipe().get(0).getCategorie();*/
 			 
 			 affiche += par.getParticipe().get(0).getannee()+ " : " +par.getNom()+" a participé à la course "+par.getParticipe().get(0).getEpreuve() + ". Son classement final fut : "+par.getParticipe().get(0).getClassement()+".\n"; 
 			 

@@ -1,16 +1,21 @@
+
+/**
+ * Class PanePays 
+ * Affiche un tableau de pays et de nombre de participants
+ * 
+ * @author Ibrahim Akrach
+ * @author Cedric Petetin
+ *
+ */
+
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Image;
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
 
-import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
+@SuppressWarnings("serial")
 public class PanePays extends JPanel{
 
 	private FenetrePrincipale fen;

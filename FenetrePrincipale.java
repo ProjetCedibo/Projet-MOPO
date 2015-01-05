@@ -1,22 +1,24 @@
 
 import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
 import java.awt.GridLayout;
-import java.awt.Image;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.File;
 
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.io.File;
-import java.io.IOException;
-
+/**
+ * Class FenetrePrincipale
+ * Affiche la fenetre et gere le traitement
+ * 
+ * @author Ibrahim Akrach
+ * @author Cedric Petetin
+ *
+ */
+@SuppressWarnings("serial")
 public class FenetrePrincipale extends JFrame {
 	
 	private JPanel panePrincipal;
@@ -37,7 +39,7 @@ public class FenetrePrincipale extends JFrame {
 
 	public FenetrePrincipale(String titre) {
 		super(titre);
-		this.t = new Transjurassienne(this);;
+		this.t = new Transjurassienne();;
 		initComposant();
 		initFenetre();
 	}

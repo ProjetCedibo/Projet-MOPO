@@ -1,11 +1,18 @@
 import java.awt.BorderLayout;
-import java.awt.Color;
 
-import javax.swing.JTable;
 import javax.swing.JPanel;
-import javax.swing.table.AbstractTableModel;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+
+/**
+ * Class TableauRecherc
+ * 
+ * @author Ibrahim Akrach
+ * @author Cedric Petetin
+ *
+ */
+@SuppressWarnings("serial")
 public class TableauRecherche extends JPanel {
 	
 	private JTable tableau;

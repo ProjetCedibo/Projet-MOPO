@@ -1,11 +1,20 @@
 import java.awt.BorderLayout;
-import java.awt.Color;
 
-import javax.swing.JTable;
 import javax.swing.JPanel;
-import javax.swing.table.AbstractTableModel;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+/**
+ * Class Tableau
+ * Permet l'affichage des tableaux
+ * utiliser pour le classement, le palamares et la liste des pays
+ * 
+ * @author Ibrahim Akrach
+ * @author Cedric Petetin
+ *
+ */
+
+@SuppressWarnings("serial")
 public class Tableau extends JPanel {
 	
 	private JTable tableau;

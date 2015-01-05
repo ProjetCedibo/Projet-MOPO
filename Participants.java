@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Class permettant de stocker les informations d'un participant à la transjurassienne

@@ -8,7 +8,17 @@ import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+/**
+ * Class PaneClassement
+ * Affiche le classement des participants a une epreuve 10 par 10
+ * et des bouttons "suivant" et "precedent"
+ * 
+ * @author Ibrahim Akrach
+ * @author Cedric Petetin
+ *
+ */
 
+@SuppressWarnings("serial")
 public class PaneClassement extends JPanel implements ActionListener {
 
 	
